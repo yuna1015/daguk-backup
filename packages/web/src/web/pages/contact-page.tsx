@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="dg-form">
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+                <div className="dg-contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
                   <div className="field">
                     <label>회사명</label>
                     <input type="text" required value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="(주)브랜드명" />
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="홍길동" />
                   </div>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+                <div className="dg-contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
                   <div className="field">
                     <label>연락처</label>
                     <input type="tel" required value={form.tel} onChange={(e) => setForm({ ...form, tel: e.target.value })} placeholder="010-0000-0000" />

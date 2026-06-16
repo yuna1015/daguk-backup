@@ -616,4 +616,21 @@
   .pcell.sm { font-size: 11px; }
   .dg-two-col { grid-template-columns: 1fr; gap: 48px; }
   .dg-fwrap { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Company - Core Values 3컬럼 → 1컬럼 */
+  .dg-values-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .dg-value-item { border-top: 1px solid var(--line); padding: 28px 0 !important; }
+
+  /* Contact - 2컬럼 폼 → 1컬럼 */
+  .dg-contact-form-grid { grid-template-columns: 1fr !important; }
+
+  /* 사업자 정보 줄바꿈 */
+  .dg-bizinfo p { word-break: keep-all; line-height: 1.8; }
+}
+
+/* Made with Runable 배지 숨기기 */
+[class*="runable"], [id*="runable"],
+div[style*="Made with"],
+a[href*="runable"] {
+  display: none !important;
 }

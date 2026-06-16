@@ -97,7 +97,7 @@ export default function Company() {
         <div className="dg-eyebrow reveal"><span className="ln" /><span>Core Values</span></div>
         <h2 className="dg-big reveal">Our Standards</h2>
 
-        <div className="reveal-stagger" style={{
+        <div className="reveal-stagger dg-values-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
           gap: "1px",
