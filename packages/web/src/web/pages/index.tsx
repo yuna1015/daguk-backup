@@ -277,6 +277,10 @@ function Footer() {
           <p>경기도 포천시 가산면 메나리길 29</p>
         </div>
       </div>
+      <div className="dg-bizinfo" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: 32, paddingTop: 20, fontSize: 12, opacity: 0.5, lineHeight: 2 }}>
+        <p>상호명: 다국텍스타일 &nbsp;|&nbsp; 대표자: 이창업 &nbsp;|&nbsp; 사업자등록번호: 207-72-62958</p>
+        <p>주소: 경기도 포천시 가산면 메나리길 29 &nbsp;|&nbsp; TEL: 031-543-6782 &nbsp;|&nbsp; FAX: 031-543-6792 &nbsp;|&nbsp; HP: 010-3213-1828</p>
+      </div>
       <p className="dg-copy">© {new Date().getFullYear()} Daguk Textile. All rights reserved.</p>
     </footer>
   );
