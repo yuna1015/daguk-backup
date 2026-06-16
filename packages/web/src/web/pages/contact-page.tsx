@@ -99,7 +99,7 @@ export default function ContactPage() {
 
       {/* Info + Form */}
       <div className="dg-section">
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 3fr", gap: 80 }} className="dg-two-col">
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 3fr", gap: 80 }} className="dg-two-col contact-wrap">
 
           {/* Info */}
           <div className="reveal">

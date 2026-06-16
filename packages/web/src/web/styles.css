@@ -617,15 +617,25 @@
   .dg-two-col { grid-template-columns: 1fr; gap: 48px; }
   .dg-fwrap { grid-template-columns: 1fr; gap: 28px; }
 
-  /* Company - Core Values 3컬럼 → 1컬럼 */
-  .dg-values-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
-  .dg-value-item { border-top: 1px solid var(--line); padding: 28px 0 !important; }
+  /* 네비 로고 심볼 공란 제거 */
+  .dg-brand img { display: none; }
+  .dg-brand { gap: 0; }
 
-  /* Contact - 2컬럼 폼 → 1컬럼 */
+  /* Company - Core Values 3컬럼 → 1컬럼 */
+  .dg-values-grid { grid-template-columns: 1fr !important; gap: 0 !important; background: none !important; }
+  .dg-values-grid > div { border-top: 1px solid var(--line); padding: 28px 0 !important; background: var(--bg) !important; }
+
+  /* Contact 페이지 전체 반응형 */
   .dg-contact-form-grid { grid-template-columns: 1fr !important; }
+  .dg-two-col.contact-wrap { grid-template-columns: 1fr !important; gap: 40px !important; }
 
   /* 사업자 정보 줄바꿈 */
-  .dg-bizinfo p { word-break: keep-all; line-height: 1.8; }
+  .dg-bizinfo { padding: 16px 0 !important; }
+  .dg-bizinfo p { word-break: keep-all; line-height: 2; font-size: 11px; }
+
+  /* 푸터 패딩 */
+  .dg-footer { padding: 40px 20px; }
+  .dg-copy { font-size: 10px; margin-top: 28px; }
 }
 
 /* Made with Runable 배지 숨기기 */
