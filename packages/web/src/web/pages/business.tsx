@@ -1,0 +1,228 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
+
+function useScrollReveal() {
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.07 }
+    );
+    document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
+
+function Nav({ active }: { active?: string }) {
+  const [, navigate] = useLocation();
+  return (
+    <nav className="dg-nav dg-nav-solid">
+      <button className="dg-brand" onClick={() => navigate("/")}>
+        <img src="/dg-logo.png" alt="DG" />
+        DAGUK TEXTILE
+      </button>
+      <div className="dg-navlinks">
+        <button onClick={() => navigate("/company")} className={active === "company" ? "active" : ""}>Company</button>
+        <button onClick={() => navigate("/business")} className={active === "business" ? "active" : ""}>Products</button>
+        <button onClick={() => navigate("/contact")} className={active === "contact" ? "active" : ""}>Contact</button>
+      </div>
+    </nav>
+  );
+}
+
+function Footer() {
+  const [, navigate] = useLocation();
+  return (
+    <footer className="dg-footer">
+      <div className="dg-fwrap">
+        <div>
+          <div className="dg-fbrand">Daguk Textile</div>
+          <p style={{ marginTop: 12 }}>다국텍스타일</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          {[{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }].map((n) => (
+            <button key={n.p} onClick={() => navigate(n.p)} style={{ background: "none", border: "none", padding: 0, display: "block", color: "var(--fg)", fontSize: 14, fontWeight: 300, lineHeight: 2, opacity: .85, cursor: "pointer" }}>{n.l}</button>
+          ))}
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>031-543-6782</p>
+          <p>dagook1869@daum.net</p>
+          <p>경기도 포천시 가산면 메나리길 29</p>
+        </div>
+      </div>
+      <p className="dg-copy">© {new Date().getFullYear()} Daguk Textile. All rights reserved.</p>
+    </footer>
+  );
+}
+
+const products = [
+  { code: "DG-F01", name: "립 1×1", cat: "립", img: "/hwoasung/p1.jpg", desc: "가장 기본적인 립 조직. 신축성과 회복력이 우수하며 넥밴드·소매밴드에 주로 사용됩니다." },
+  { code: "DG-F02", name: "립 2×2", cat: "립", img: "/hwoasung/p2.jpg", desc: "두꺼운 립 조직으로 볼륨감 있는 터틀넥·점퍼 소매에 적합합니다." },
+  { code: "DG-F03", name: "골지 싱글", cat: "골지", img: "/hwoasung/p3.jpg", desc: "얇고 부드러운 골지 원단. 드레이프성이 좋아 이너웨어와 가벼운 아우터에 활용됩니다." },
+  { code: "DG-F04", name: "골지 더블", cat: "골지", img: "/hwoasung/p4.jpg", desc: "앞뒤 동일한 조직의 더블 골지. 탄탄한 구조로 셋업·트레이닝복 소재로 선호됩니다." },
+  { code: "DG-F05", name: "다이마루 싱글", cat: "립", img: "/hwoasung/p5.jpg", desc: "가장 범용적인 다이마루 원단. 면·폴리 혼방으로 기본 티셔츠부터 캐주얼 상품까지." },
+  { code: "DG-F06", name: "다이마루 인타록", cat: "립", img: "/hwoasung/p6.jpg", desc: "앞뒤 균일한 구조의 인타록. 두께감이 있어 후드·맨투맨 소재로 적합합니다." },
+  { code: "DG-F07", name: "후라이스", cat: "후라이스", img: "/hwoasung/p7.jpg", desc: "밀도 높은 루프 조직으로 보온성·내구성이 뛰어납니다. 겨울 이너·기모 가공에 사용됩니다." },
+  { code: "DG-F08", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
+  { code: "DG-F09", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
+  { code: "DG-F10", name: "편직 기계 20수", cat: "편직 기계", img: "/hwoasung/p3.jpg", desc: "20게이지 원통 편직기. 중간 두께 원단 생산에 최적화되어 있습니다." },
+  { code: "DG-F11", name: "편직 기계 28수", cat: "편직 기계", img: "/hwoasung/p4.jpg", desc: "28게이지 고밀도 편직기. 얇고 섬세한 고급 원단 생산에 사용됩니다." },
+  { code: "DG-F12", name: "후라이스 기모", cat: "후라이스", img: "/hwoasung/p5.jpg", desc: "후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
+];
+
+export default function Business() {
+  useScrollReveal();
+  const [, navigate] = useLocation();
+  const [activeTab, setActiveTab] = useState<"all" | "편직 기계" | "립" | "골지" | "후라이스" | "와플">("all");
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const filtered = activeTab === "all" ? products : products.filter((p) => p.cat === activeTab);
+
+  return (
+    <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+      <div className="grain" />
+      <Nav active="business" />
+
+      {/* Page Hero */}
+      <div className="dg-page-hero">
+        <div className="eyetag reveal"><span className="ln" /><span>Products</span></div>
+        <h1 className="reveal">Knitting · Greige<br />&amp; Finishing</h1>
+        <p className="tagline reveal">Daimaru, Rib, Golgi — full lineup. From sample to mass production.</p>
+      </div>
+
+      <hr className="dg-divider" />
+
+      {/* UNIT 01 */}
+      <div className="dg-section">
+        <div className="dg-eyebrow reveal"><span className="ln" /><span>Unit 01</span><span className="sub">편직 / 생지</span></div>
+        <div className="dg-two-col">
+          <div className="reveal">
+            <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>편직 / 생지</h2>
+            <p className="dg-lead" style={{ marginTop: 28 }}>
+              최신 고성능 환편기와 다양한 게이지의 설비 인프라를 통해, 어떠한 샘플 스펙에도 즉각적으로 대응하는 탄탄한 생산 기반을 갖추고 있습니다.
+            </p>
+            <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 12 }}>
+              {["고성능 환편기 25대 운용", "다양한 게이지 — 7G·12G·14G·18G", "면·폴리·레이온·혼방 전 소재 대응", "즉시 생산 가능 — 일반 납기 대비 단축"].map((v) => (
+                <div key={v} style={{ display: "flex", gap: 12, fontSize: 14, color: "var(--dim)", alignItems: "flex-start" }}>
+                  <span style={{ color: "var(--glow)" }}>—</span><span>{v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="reveal" style={{ order: -1 }}>
+            <img src="/hwoasung/knitting_unit.jpg" alt="편직 생지" className="dg-img" />
+          </div>
+        </div>
+      </div>
+
+      <hr className="dg-divider" />
+
+      {/* UNIT 02 */}
+      <div className="dg-section">
+        <div className="dg-eyebrow reveal"><span className="ln" /><span>Unit 02</span><span className="sub">가공 인벤토리</span></div>
+        <div className="dg-two-col">
+          <div className="reveal">
+            <img src="/hwoasung/p3.jpg" alt="골지 원단 클로즈업" className="dg-img" />
+          </div>
+          <div className="reveal">
+            <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>가공 인벤토리</h2>
+            <p className="dg-lead" style={{ marginTop: 28 }}>
+              다국텍스타일이 엄선하고 데이터화한 프리미엄 편직 원단 인벤토리입니다. 다이마루·립·골지 전 라인업을 즉시 확인하고 샘플을 요청하세요.
+            </p>
+            <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 12 }}>
+              {["기성 재고 즉시 출고 가능", "색상·중량·게이지 전 스펙 제공", "최소 주문량 협의 가능 (소량 OK)", "샘플 요청 후 3일 내 발송"].map((v) => (
+                <div key={v} style={{ display: "flex", gap: 12, fontSize: 14, color: "var(--dim)", alignItems: "flex-start" }}>
+                  <span style={{ color: "var(--glow)" }}>—</span><span>{v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr className="dg-divider" />
+
+      {/* Archive */}
+      <div className="dg-section">
+        <div className="dg-eyebrow reveal"><span className="ln" /><span>Archive</span></div>
+        <div className="reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20, marginBottom: 48 }}>
+          <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>제품 아카이브</h2>
+          <div style={{ display: "flex", gap: 8 }}>
+            {(["all", "편직 기계", "립", "골지", "후라이스", "와플"] as const).map((tab) => (
+              <button key={tab} onClick={() => setActiveTab(tab)} style={{
+                padding: "10px 18px",
+                fontSize: 10,
+                letterSpacing: ".15em",
+                fontWeight: 700,
+                background: activeTab === tab ? "var(--fg)" : "transparent",
+                color: activeTab === tab ? "var(--bg)" : "var(--dim)",
+                border: "1px solid",
+                borderColor: activeTab === tab ? "var(--fg)" : "var(--line)",
+                transition: "all .3s",
+                cursor: "pointer",
+              }}>
+                {tab === "all" ? "전체" : tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 32 }}>
+          {filtered.map((p, i) => (
+            <div key={p.code}
+              onMouseEnter={() => setHoveredIdx(i)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              style={{ cursor: "pointer" }}>
+              <div style={{ position: "relative", overflow: "hidden", marginBottom: 12 }}>
+                <img src={p.img} alt={p.name} style={{ width: "100%", aspectRatio: "4/5", objectFit: "cover", transition: "transform .7s cubic-bezier(.16,1,.3,1)", transform: hoveredIdx === i ? "scale(1.05)" : "scale(1)" }} />
+                <div style={{ position: "absolute", inset: 0, background: "rgba(4,5,7,.8)", display: "flex", alignItems: "flex-end", padding: 16, transition: "opacity .3s", opacity: hoveredIdx === i ? 1 : 0 }}>
+                  <p style={{ fontSize: 12, color: "rgba(233,237,242,.7)", lineHeight: 1.7 }}>{p.desc}</p>
+                </div>
+              </div>
+              <p style={{ fontSize: 10, fontFamily: "monospace", color: "var(--glow)", letterSpacing: ".1em", marginBottom: 4 }}>{p.code}</p>
+              <p style={{ fontSize: 14, fontWeight: 600, color: "var(--fg)" }}>{p.name}</p>
+              <p style={{ fontSize: 11, color: "var(--dim)", letterSpacing: ".06em" }}>{p.cat}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <hr className="dg-divider" />
+
+      {/* Process */}
+      <div className="dg-section">
+        <div className="dg-eyebrow reveal"><span className="ln" /><span>Process</span></div>
+        <h2 className="dg-big reveal" style={{ fontSize: "clamp(28px,3.8vw,48px)", marginBottom: 56 }}>샘플부터 납품까지</h2>
+
+        <div className="reveal-stagger dg-process-grid">
+          {[
+            { step: "01", title: "샘플 접수", desc: "사진·실물 샘플 또는 스펙 문서를 보내주세요. 원단명 몰라도 됩니다." },
+            { step: "02", title: "스펙 분석", desc: "조직·게이지·소재를 분석해 최적 스펙을 제안합니다. 보통 1~2일 내." },
+            { step: "03", title: "샘플 생산", desc: "스펙 확정 후 샘플 원단 제작. 소량 테스트 가능합니다." },
+            { step: "04", title: "본 납품", desc: "샘플 승인 후 일정 협의하여 대량 생산 및 납품." },
+          ].map((s) => (
+            <div key={s.step} style={{ background: "var(--bg)", padding: "40px 28px" }}>
+              <span style={{ fontSize: 10, letterSpacing: ".22em", color: "var(--glow)", display: "block", marginBottom: 20 }}>{s.step}</span>
+              <h3 style={{ fontFamily: "var(--kr)", fontSize: 18, fontWeight: 600, color: "var(--fg)", marginBottom: 14 }}>{s.title}</h3>
+              <p style={{ fontSize: 13, color: "var(--dim)", lineHeight: 1.9, fontWeight: 300 }}>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <hr className="dg-divider" />
+
+      {/* CTA */}
+      <div className="dg-section" style={{ textAlign: "center", padding: "80px 36px" }}>
+        <h2 className="reveal" style={{ fontFamily: "var(--kr)", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "var(--fg)", marginBottom: 16 }}>샘플 문의하기</h2>
+        <p className="reveal" style={{ color: "var(--dim)", marginBottom: 40 }}></p>
+        <div className="reveal">
+          <button className="dg-btn" onClick={() => navigate("/contact")}>지금 문의하기 →</button>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
