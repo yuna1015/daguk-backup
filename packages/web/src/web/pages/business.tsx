@@ -84,8 +84,7 @@ const products = [
   // 후라이스
   { code: "DG-F01", name: "후라이스 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 조직의 후라이스. 밀도 높은 루프 구조로 보온성·내구성이 뛰어나며 겨울 이너·기모 가공에 사용됩니다." },
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
-  { code: "텐셀 1×1", name: "텐셀 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png", desc: "텐셀 소재 1×1 후라이스. 자연유래 섬유 특유의 실크 같은 광택과 부드러운 드레이프감이 특징입니다. 피부 자극이 적어 이너웨어·민감성 의류에 적합합니다." },
-  { code: "울 1×1", name: "울 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png", desc: "울 소재 1×1 후라이스. 천연 양모 특유의 보온성과 흡습성이 뛰어나며 니트웨어·겨울 이너에 널리 활용됩니다." },
+  { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png", desc: "텐셀·울 혼방 1×1 후라이스. 텐셀의 부드러운 드레이프감과 울의 보온성·흡습성을 동시에 갖춘 고급 원단입니다. 이너웨어·니트웨어에 적합합니다." },
   // 와플
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
   { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
