@@ -57,18 +57,34 @@ function Footer() {
 }
 
 const products = [
-  { code: "DG-F01", name: "립 1×1", cat: "립", img: "/hwoasung/p1.jpg", desc: "가장 기본적인 립 조직. 신축성과 회복력이 우수하며 넥밴드·소매밴드에 주로 사용됩니다." },
-  { code: "DG-F02", name: "립 2×2", cat: "립", img: "/hwoasung/p2.jpg", desc: "두꺼운 립 조직으로 볼륨감 있는 터틀넥·점퍼 소매에 적합합니다." },
-  { code: "DG-F03", name: "골지 싱글", cat: "골지", img: "/hwoasung/p3.jpg", desc: "얇고 부드러운 골지 원단. 드레이프성이 좋아 이너웨어와 가벼운 아우터에 활용됩니다." },
-  { code: "DG-F04", name: "골지 더블", cat: "골지", img: "/hwoasung/p4.jpg", desc: "앞뒤 동일한 조직의 더블 골지. 탄탄한 구조로 셋업·트레이닝복 소재로 선호됩니다." },
-  { code: "DG-F05", name: "다이마루 싱글", cat: "립", img: "/hwoasung/p5.jpg", desc: "가장 범용적인 다이마루 원단. 면·폴리 혼방으로 기본 티셔츠부터 캐주얼 상품까지." },
-  { code: "DG-F06", name: "다이마루 인타록", cat: "립", img: "/hwoasung/p6.jpg", desc: "앞뒤 균일한 구조의 인타록. 두께감이 있어 후드·맨투맨 소재로 적합합니다." },
-  { code: "DG-F07", name: "후라이스", cat: "후라이스", img: "/hwoasung/p7.jpg", desc: "밀도 높은 루프 조직으로 보온성·내구성이 뛰어납니다. 겨울 이너·기모 가공에 사용됩니다." },
-  { code: "DG-F08", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
-  { code: "DG-F09", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
-  { code: "DG-F10", name: "편직 기계 20수", cat: "편직 기계", img: "/hwoasung/p3.jpg", desc: "20게이지 원통 편직기. 중간 두께 원단 생산에 최적화되어 있습니다." },
-  { code: "DG-F11", name: "편직 기계 28수", cat: "편직 기계", img: "/hwoasung/p4.jpg", desc: "28게이지 고밀도 편직기. 얇고 섬세한 고급 원단 생산에 사용됩니다." },
-  { code: "DG-F12", name: "후라이스 기모", cat: "후라이스", img: "/hwoasung/p5.jpg", desc: "후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
+  // 립 2*1 제품
+  { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "립", img: "/products/rib-cm20sp140-2x1.png", desc: "20수 SP140 2×1 립. 쮸리립으로 많이 사용되며 신축성과 회복력이 우수합니다." },
+  { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "립", img: "/products/rib-cm20sp70-2x1.png", desc: "20수 SP70 2×1 립. 쮸리립 용도로 활용되며 부드러운 터치감이 특징입니다." },
+  { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "립", img: "/products/rib-cm30sp140-2x1.png", desc: "30수 SP140 2×1 립. 미니쮸리, 양면, 인터록 용도로 널리 사용됩니다." },
+  { code: "CM30SP70 2×1", name: "CM30SP70 2×1", cat: "립", img: "/products/rib-cm30sp70-2x1.png", desc: "30수 SP70 2×1 립. 미니쮸리, 양면, 인터록 소재로 최적입니다." },
+  { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "립", img: "/products/rib-cm30twop-sp140-2x1.png", desc: "30수 투플라이 SP140 2×1 립. 쮸리 및 헤비쮸리 용도에 적합한 중량감 있는 원단입니다." },
+  { code: "CM30이합 SP70 2×1", name: "CM30이합 SP70 2×1", cat: "립", img: "/products/rib-cm30twop-sp70-2x1.png", desc: "30수 투플라이 SP70 2×1 립. 쮸리·헤비쮸리에 사용되는 두꺼운 립 원단입니다." },
+  // 립 1*1 노스판
+  { code: "CM30단사 1×1", name: "CM30단사 1×1 노스판", cat: "립", img: "/products/rib-cm30single-1x1.png", desc: "30수 단사 노스판 1×1 립. 싱글립으로 많이 사용되며 넥밴드·소매 밴드에 적합합니다." },
+  { code: "CM20단사 1×1", name: "CM20단사 1×1 노스판", cat: "립", img: "/products/rib-cm20single-1x1.png", desc: "20수 단사 노스판 1×1 립. 싱글립 용도로 가볍고 부드러운 착용감을 제공합니다." },
+  { code: "CM40단사 1×1", name: "CM40단사 1×1 노스판", cat: "립", img: "/products/rib-cm40single-1x1.png", desc: "40수 단사 노스판 1×1 립. 고밀도 싱글립으로 섬세하고 매끄러운 표면이 특징입니다." },
+  { code: "CM30이합 1×1", name: "CM30이합 1×1 노스판", cat: "립", img: "/products/rib-cm30twop-1x1.png", desc: "30수 이합 노스판 1×1 립. 쮸리 용도에 적합한 중량감 있는 립 원단입니다." },
+  { code: "CM20이합 1×1", name: "CM20이합 1×1 노스판", cat: "립", img: "/products/rib-cm20twop-1x1.png", desc: "20수 이합 노스판 1×1 립. 헤비쮸리 용도로 두껍고 탄탄한 조직감을 자랑합니다." },
+  // CVC/TC
+  { code: "CVC 60/40", name: "CVC 60/40", cat: "립", img: "/products/rib-cvc60-40.png", desc: "면 60% 폴리에스터 40% 혼방 립. 형태 안정성과 흡습성을 동시에 갖춘 범용 원단입니다." },
+  { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-tc65-35.png", desc: "폴리에스터 65% 면 35% 혼방 립. 내구성이 높고 구김이 적어 다양한 용도에 활용됩니다." },
+  // 골지
+  { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/hwoasung/p3.jpg", desc: "얇고 부드러운 골지 원단. 드레이프성이 좋아 이너웨어와 가벼운 아우터에 활용됩니다." },
+  { code: "DG-G02", name: "골지 더블", cat: "골지", img: "/hwoasung/p4.jpg", desc: "앞뒤 동일한 조직의 더블 골지. 탄탄한 구조로 셋업·트레이닝복 소재로 선호됩니다." },
+  // 후라이스
+  { code: "DG-F01", name: "후라이스", cat: "후라이스", img: "/hwoasung/p7.jpg", desc: "밀도 높은 루프 조직으로 보온성·내구성이 뛰어납니다. 겨울 이너·기모 가공에 사용됩니다." },
+  { code: "DG-F02", name: "후라이스 기모", cat: "후라이스", img: "/hwoasung/p5.jpg", desc: "후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
+  // 와플
+  { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
+  { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
+  // 편직 기계
+  { code: "DG-M01", name: "편직 기계 20수", cat: "편직 기계", img: "/hwoasung/p3.jpg", desc: "20게이지 원통 편직기. 중간 두께 원단 생산에 최적화되어 있습니다." },
+  { code: "DG-M02", name: "편직 기계 28수", cat: "편직 기계", img: "/hwoasung/p4.jpg", desc: "28게이지 고밀도 편직기. 얇고 섬세한 고급 원단 생산에 사용됩니다." },
 ];
 
 export default function Business() {
