@@ -628,6 +628,7 @@
   /* Contact 페이지 전체 반응형 */
   .dg-contact-form-grid { grid-template-columns: 1fr !important; }
   .dg-two-col.contact-wrap { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .dg-location-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
 
   /* 사업자 정보 줄바꿈 */
   .dg-bizinfo { padding: 16px 0 !important; }

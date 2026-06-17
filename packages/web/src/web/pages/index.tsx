@@ -224,7 +224,7 @@ function Location() {
         <h2 className="dg-big reveal" style={{ marginBottom: 48 }}>
           다국텍스타일
         </h2>
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
+        <div className="reveal dg-location-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
           <div style={{ borderTop: "1px solid var(--line)", paddingTop: 32, display: "flex", flexDirection: "column", gap: 20 }}>
             {[
               { lbl: "주소", val: "경기도 포천시 가산면 메나리길 29" },
