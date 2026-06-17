@@ -58,12 +58,12 @@ function Footer() {
 
 const products = [
   // 립 2*1 제품
-  { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "립", img: "/products/rib-cm20sp140-2x1.png", desc: "20수 SP140 2×1 립. 쮸리립으로 많이 사용되며 신축성과 회복력이 우수합니다." },
-  { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "립", img: "/products/rib-cm20sp70-2x1.png", desc: "20수 SP70 2×1 립. 쮸리립 용도로 활용되며 부드러운 터치감이 특징입니다." },
-  { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "립", img: "/products/rib-cm30sp140-2x1.png", desc: "30수 SP140 2×1 립. 미니쮸리, 양면, 인터록 용도로 널리 사용됩니다." },
-  { code: "CM30SP70 2×1", name: "CM30SP70 2×1", cat: "립", img: "/products/rib-cm30sp70-2x1.png", desc: "30수 SP70 2×1 립. 미니쮸리, 양면, 인터록 소재로 최적입니다." },
-  { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "립", img: "/products/rib-cm30twop-sp140-2x1.png", desc: "30수 투플라이 SP140 2×1 립. 쮸리 및 헤비쮸리 용도에 적합한 중량감 있는 원단입니다." },
-  { code: "CM30이합 SP70 2×1", name: "CM30이합 SP70 2×1", cat: "립", img: "/products/rib-cm30twop-sp70-2x1.png", desc: "30수 투플라이 SP70 2×1 립. 쮸리·헤비쮸리에 사용되는 두꺼운 립 원단입니다." },
+  { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "립", img: "/products/rib-2x1-white.png", desc: "20수 SP140 2×1 립. 쮸리립으로 많이 사용되며 신축성과 회복력이 우수합니다." },
+  { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "립", img: "/products/rib-2x1-beige.png", desc: "20수 SP70 2×1 립. 쮸리립 용도로 활용되며 부드러운 터치감이 특징입니다." },
+  { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "립", img: "/products/rib-2x1-gray.png", desc: "30수 SP140 2×1 립. 미니쮸리, 양면, 인터록 용도로 널리 사용됩니다." },
+  { code: "CM30SP70 2×1", name: "CM30SP70 2×1", cat: "립", img: "/products/golgi-2x1-orange.png", desc: "30수 SP70 2×1 립. 미니쮸리, 양면, 인터록 소재로 최적입니다." },
+  { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "립", img: "/products/rib-2x1-navy.png", desc: "30수 투플라이 SP140 2×1 립. 쮸리 및 헤비쮸리 용도에 적합한 중량감 있는 원단입니다." },
+  { code: "CM30이합 SP70 2×1", name: "CM30이합 SP70 2×1", cat: "립", img: "/products/rib-2x1-gray.png", desc: "30수 투플라이 SP70 2×1 립. 쮸리·헤비쮸리에 사용되는 두꺼운 립 원단입니다." },
   // 립 1*1 노스판
   { code: "CM30단사 1×1", name: "CM30단사 1×1 노스판", cat: "립", img: "/products/rib-cm30single-1x1.png", desc: "30수 단사 노스판 1×1 립. 싱글립으로 많이 사용되며 넥밴드·소매 밴드에 적합합니다." },
   { code: "CM20단사 1×1", name: "CM20단사 1×1 노스판", cat: "립", img: "/products/rib-cm20single-1x1.png", desc: "20수 단사 노스판 1×1 립. 싱글립 용도로 가볍고 부드러운 착용감을 제공합니다." },
@@ -73,15 +73,14 @@ const products = [
   // CVC
   { code: "CVC20단사 1×1", name: "CVC20단사 1×1 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "면 60% 폴리에스터 40% CVC 혼방 20수 단사 1×1 립. 부드러운 터치감과 형태 안정성을 동시에 갖춘 싱글립 원단입니다." },
   { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 30수 단사 1×1 립. 흡습성과 내구성이 뛰어나 넥밴드·소매 밴드에 적합합니다." },
-  { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "립", img: "/products/golgi-2x1-rib.png", desc: "CVC 혼방 30수 SP140 2×1 립. 쮸리·양면 용도에 적합하며 혼방 소재 특유의 형태 회복력이 우수합니다." },
+  { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "립", img: "/products/rib-2x1-beige.png", desc: "CVC 혼방 30수 SP140 2×1 립. 쮸리·양면 용도에 적합하며 혼방 소재 특유의 형태 회복력이 우수합니다." },
   { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 40수 1×1 노스판 립. 고밀도 싱글립으로 섬세하고 매끄러운 표면이 특징입니다." },
   { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 30수 이합 노스판 립. 두께감 있는 쮸리 용도에 적합하며 혼방 소재의 안정적인 조직감이 특징입니다." },
   // TC
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-tc65-35.png", desc: "폴리에스터 65% 면 35% 혼방 립. 내구성이 높고 구김이 적어 다양한 용도에 활용됩니다." },
   // 골지
-  { code: "DG-G01", name: "골지 2×1 — 오렌지", cat: "골지", img: "/products/golgi-2x1-orange.png", desc: "2×1 조직의 골지 원단. 두 줄 올라오고 한 줄 들어가는 리브 패턴으로 탄탄한 신축성과 입체감이 특징입니다." },
-  { code: "DG-G02", name: "골지 2×1 — 크림", cat: "골지", img: "/products/golgi-2x1-cream.png", desc: "2×1 골지, 크림/아이보리 컬러. 부드러운 톤으로 이너웨어·캐주얼 셋업에 활용됩니다." },
-  { code: "DG-G03", name: "골지 2×1 — 차콜", cat: "골지", img: "/products/golgi-2x1-charcoal.png", desc: "2×1 골지, 차콜/다크그레이 컬러. 탄탄한 구조로 아우터·트레이닝복 소재로 선호됩니다." },
+  { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/products/golgi-2x1-orange.png", desc: "얇고 부드러운 골지 원단. 드레이프성이 좋아 이너웨어와 가벼운 아우터에 활용됩니다." },
+  { code: "DG-G02", name: "골지 더블", cat: "골지", img: "/products/golgi-2x1-orange.png", desc: "앞뒤 동일한 조직의 더블 골지. 탄탄한 구조로 셋업·트레이닝복 소재로 선호됩니다." },
   // 후라이스
   { code: "DG-F01", name: "후라이스 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 조직의 후라이스. 밀도 높은 루프 구조로 보온성·내구성이 뛰어나며 겨울 이너·기모 가공에 사용됩니다." },
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
