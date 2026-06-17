@@ -167,46 +167,62 @@ export default function Business() {
 
       <hr className="dg-divider" />
 
-      {/* Archive */}
-      <div className="dg-section">
-        <div className="dg-eyebrow reveal"><span className="ln" /><span>Archive</span></div>
-        <div className="reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20, marginBottom: 48 }}>
-          <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>제품 아카이브</h2>
-          <div style={{ display: "flex", gap: 8 }}>
-            {(["all", "편직 기계", "립", "골지", "후라이스", "와플", "가공 인벤토리"] as const).map((tab) => (
-              <button key={tab} onClick={() => setActiveTab(tab)} style={{
-                padding: "10px 18px",
-                fontSize: 10,
-                letterSpacing: ".15em",
-                fontWeight: 700,
-                background: activeTab === tab ? "var(--fg)" : "transparent",
-                color: activeTab === tab ? "var(--bg)" : "var(--dim)",
-                border: "1px solid",
-                borderColor: activeTab === tab ? "var(--fg)" : "var(--line)",
-                transition: "all .3s",
-                cursor: "pointer",
-              }}>
-                {tab === "all" ? "전체" : tab}
-              </button>
-            ))}
-          </div>
+      {/* Archive — white section */}
+      <div style={{ background: "#fff", margin: "0 -36px", padding: "64px 36px" }}>
+        <div className="dg-eyebrow reveal" style={{ "--ln-color": "#ccc" } as React.CSSProperties}>
+          <span className="ln" /><span style={{ color: "#999" }}>Archive</span>
+        </div>
+        <div className="reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16, marginBottom: 40 }}>
+          <h2 style={{ fontSize: "clamp(24px,3.8vw,48px)", fontWeight: 700, color: "#111" }}>제품 아카이브</h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 32 }}>
+        {/* 탭 필터 */}
+        <div className="reveal" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 36 }}>
+          {(["all", "편직 기계", "립", "골지", "후라이스", "와플", "가공 인벤토리"] as const).map((tab) => (
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{
+              padding: "8px 14px",
+              fontSize: 10,
+              letterSpacing: ".12em",
+              fontWeight: 700,
+              background: activeTab === tab ? "#111" : "#fff",
+              color: activeTab === tab ? "#fff" : "#999",
+              border: "1px solid",
+              borderColor: activeTab === tab ? "#111" : "#ddd",
+              cursor: "pointer",
+              transition: "all .25s",
+            }}>
+              {tab === "all" ? "전체" : tab}
+            </button>
+          ))}
+        </div>
+
+        {/* 카드 그리드 */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+          gap: "24px 16px",
+        }}>
           {filtered.map((p, i) => (
             <div key={p.code}
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
               style={{ cursor: "pointer" }}>
-              <div style={{ position: "relative", overflow: "hidden", marginBottom: 12 }}>
-                <img src={p.img} alt={p.name} style={{ width: "100%", aspectRatio: "4/5", objectFit: "cover", transition: "transform .7s cubic-bezier(.16,1,.3,1)", transform: hoveredIdx === i ? "scale(1.05)" : "scale(1)" }} />
-                <div style={{ position: "absolute", inset: 0, background: "rgba(4,5,7,.8)", display: "flex", alignItems: "flex-end", padding: 16, transition: "opacity .3s", opacity: hoveredIdx === i ? 1 : 0 }}>
-                  <p style={{ fontSize: 12, color: "rgba(233,237,242,.7)", lineHeight: 1.7 }}>{p.desc}</p>
-                </div>
+              <div style={{ overflow: "hidden", marginBottom: 10 }}>
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  style={{
+                    width: "100%",
+                    aspectRatio: "4/5",
+                    objectFit: "cover",
+                    display: "block",
+                    transition: "transform .6s cubic-bezier(.16,1,.3,1)",
+                    transform: hoveredIdx === i ? "scale(1.04)" : "scale(1)",
+                  }}
+                />
               </div>
-              <p style={{ fontSize: 10, fontFamily: "monospace", color: "var(--glow)", letterSpacing: ".1em", marginBottom: 4 }}>{p.code}</p>
-              <p style={{ fontSize: 14, fontWeight: 600, color: "var(--fg)" }}>{p.name}</p>
-              <p style={{ fontSize: 11, color: "var(--dim)", letterSpacing: ".06em" }}>{p.cat}</p>
+              <p style={{ fontSize: 13, fontWeight: 500, color: "#111", marginBottom: 3, lineHeight: 1.4 }}>{p.name}</p>
+              <p style={{ fontSize: 10, color: "#aaa", letterSpacing: ".06em" }}>{p.cat}</p>
             </div>
           ))}
         </div>
