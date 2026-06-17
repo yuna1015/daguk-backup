@@ -75,7 +75,7 @@ const products = [
   { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "립", img: "/products/rib-1x1-beige.png", desc: "CVC 혼방 30수 단사 1×1 립. 흡습성과 내구성이 뛰어나 넥밴드·소매 밴드에 적합합니다." },
   { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "립", img: "/products/rib-2x1-beige.png", desc: "CVC 혼방 30수 SP140 2×1 립. 쮸리·양면 용도에 적합하며 혼방 소재 특유의 형태 회복력이 우수합니다." },
   { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "립", img: "/products/rib-1x1-beige.png", desc: "CVC 혼방 40수 1×1 노스판 립. 고밀도 싱글립으로 섬세하고 매끄러운 표면이 특징입니다." },
-  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/rib-1x1-beige.png", desc: "CVC 혼방 30수 이합 노스판 립. 두께감 있는 쮸리 용도에 적합하며 혼방 소재의 안정적인 조직감이 특징입니다." },
+  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/rib-1x1-navy.png", desc: "CVC 혼방 30수 이합 노스판 립. 두께감 있는 쮸리 용도에 적합하며 혼방 소재의 안정적인 조직감이 특징입니다." },
   // TC
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-2x1-navy.png", desc: "폴리에스터 65% 면 35% 혼방 립. 내구성이 높고 구김이 적어 다양한 용도에 활용됩니다." },
   // 골지
