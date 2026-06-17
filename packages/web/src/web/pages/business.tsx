@@ -70,15 +70,20 @@ const products = [
   { code: "CM40단사 1×1", name: "CM40단사 1×1 노스판", cat: "립", img: "/products/rib-cm40single-1x1.png", desc: "40수 단사 노스판 1×1 립. 고밀도 싱글립으로 섬세하고 매끄러운 표면이 특징입니다." },
   { code: "CM30이합 1×1", name: "CM30이합 1×1 노스판", cat: "립", img: "/products/rib-cm30twop-1x1.png", desc: "30수 이합 노스판 1×1 립. 쮸리 용도에 적합한 중량감 있는 립 원단입니다." },
   { code: "CM20이합 1×1", name: "CM20이합 1×1 노스판", cat: "립", img: "/products/rib-cm20twop-1x1.png", desc: "20수 이합 노스판 1×1 립. 헤비쮸리 용도로 두껍고 탄탄한 조직감을 자랑합니다." },
-  // CVC/TC
-  { code: "CVC 60/40", name: "CVC 60/40", cat: "립", img: "/products/rib-cvc60-40.png", desc: "면 60% 폴리에스터 40% 혼방 립. 형태 안정성과 흡습성을 동시에 갖춘 범용 원단입니다." },
+  // CVC
+  { code: "CVC20단사 1×1", name: "CVC20단사 1×1 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "면 60% 폴리에스터 40% CVC 혼방 20수 단사 1×1 립. 부드러운 터치감과 형태 안정성을 동시에 갖춘 싱글립 원단입니다." },
+  { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 30수 단사 1×1 립. 흡습성과 내구성이 뛰어나 넥밴드·소매 밴드에 적합합니다." },
+  { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "립", img: "/products/golgi-2x1-rib.png", desc: "CVC 혼방 30수 SP140 2×1 립. 쮸리·양면 용도에 적합하며 혼방 소재 특유의 형태 회복력이 우수합니다." },
+  { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 40수 1×1 노스판 립. 고밀도 싱글립으로 섬세하고 매끄러운 표면이 특징입니다." },
+  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/cvc-1x1-rib.png", desc: "CVC 혼방 30수 이합 노스판 립. 두께감 있는 쮸리 용도에 적합하며 혼방 소재의 안정적인 조직감이 특징입니다." },
+  // TC
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-tc65-35.png", desc: "폴리에스터 65% 면 35% 혼방 립. 내구성이 높고 구김이 적어 다양한 용도에 활용됩니다." },
   // 골지
-  { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/hwoasung/p3.jpg", desc: "얇고 부드러운 골지 원단. 드레이프성이 좋아 이너웨어와 가벼운 아우터에 활용됩니다." },
-  { code: "DG-G02", name: "골지 더블", cat: "골지", img: "/hwoasung/p4.jpg", desc: "앞뒤 동일한 조직의 더블 골지. 탄탄한 구조로 셋업·트레이닝복 소재로 선호됩니다." },
+  { code: "DG-G01", name: "골지 2×1", cat: "골지", img: "/products/golgi-2x1-rib.png", desc: "2×1 조직의 골지 원단. 두 줄 올라오고 한 줄 들어가는 리브 패턴으로 탄탄한 신축성과 입체감이 특징입니다." },
+  { code: "DG-G02", name: "골지 더블 2×1", cat: "골지", img: "/products/golgi-2x1-rib.png", desc: "더블 구조의 2×1 골지. 앞뒤 동일한 조직으로 셋업·트레이닝복 소재로 선호됩니다." },
   // 후라이스
-  { code: "DG-F01", name: "후라이스", cat: "후라이스", img: "/hwoasung/p7.jpg", desc: "밀도 높은 루프 조직으로 보온성·내구성이 뛰어납니다. 겨울 이너·기모 가공에 사용됩니다." },
-  { code: "DG-F02", name: "후라이스 기모", cat: "후라이스", img: "/hwoasung/p5.jpg", desc: "후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
+  { code: "DG-F01", name: "후라이스 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 조직의 후라이스. 밀도 높은 루프 구조로 보온성·내구성이 뛰어나며 겨울 이너·기모 가공에 사용됩니다." },
+  { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
   // 와플
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
   { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
