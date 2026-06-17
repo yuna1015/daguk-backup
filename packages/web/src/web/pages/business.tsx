@@ -79,8 +79,9 @@ const products = [
   // TC
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-tc65-35.png", desc: "폴리에스터 65% 면 35% 혼방 립. 내구성이 높고 구김이 적어 다양한 용도에 활용됩니다." },
   // 골지
-  { code: "DG-G01", name: "골지 2×1", cat: "골지", img: "/products/golgi-2x1-rib.png", desc: "2×1 조직의 골지 원단. 두 줄 올라오고 한 줄 들어가는 리브 패턴으로 탄탄한 신축성과 입체감이 특징입니다." },
-  { code: "DG-G02", name: "골지 더블 2×1", cat: "골지", img: "/products/golgi-2x1-rib.png", desc: "더블 구조의 2×1 골지. 앞뒤 동일한 조직으로 셋업·트레이닝복 소재로 선호됩니다." },
+  { code: "DG-G01", name: "골지 2×1 — 오렌지", cat: "골지", img: "/products/golgi-2x1-orange.png", desc: "2×1 조직의 골지 원단. 두 줄 올라오고 한 줄 들어가는 리브 패턴으로 탄탄한 신축성과 입체감이 특징입니다." },
+  { code: "DG-G02", name: "골지 2×1 — 크림", cat: "골지", img: "/products/golgi-2x1-cream.png", desc: "2×1 골지, 크림/아이보리 컬러. 부드러운 톤으로 이너웨어·캐주얼 셋업에 활용됩니다." },
+  { code: "DG-G03", name: "골지 2×1 — 차콜", cat: "골지", img: "/products/golgi-2x1-charcoal.png", desc: "2×1 골지, 차콜/다크그레이 컬러. 탄탄한 구조로 아우터·트레이닝복 소재로 선호됩니다." },
   // 후라이스
   { code: "DG-F01", name: "후라이스 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 조직의 후라이스. 밀도 높은 루프 구조로 보온성·내구성이 뛰어나며 겨울 이너·기모 가공에 사용됩니다." },
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png", desc: "1×1 후라이스에 기모 가공을 더한 원단. 보온성이 높아 겨울 이너·방한 의류에 적합합니다." },
