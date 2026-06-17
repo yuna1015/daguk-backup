@@ -88,6 +88,11 @@ const products = [
   // 와플
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg", desc: "격자형 요철 조직으로 흡습성·통기성이 뛰어납니다. 여름 이너·캐주얼 상의에 활용됩니다." },
   { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg", desc: "두꺼운 더블 와플 조직. 보온성·볼륨감을 살린 아우터·셋업 소재로 선호됩니다." },
+  // 가공 인벤토리
+  { code: "DG-I01", name: "크림·아이보리 혼합", cat: "가공 인벤토리", img: "/products/inventory-cream.png", desc: "크림·아이보리·오프화이트 계열 립 원단 재고. 화이트 기반 이너·캐주얼에 폭넓게 활용 가능합니다." },
+  { code: "DG-I02", name: "그레이·차콜 혼합", cat: "가공 인벤토리", img: "/products/inventory-gray.png", desc: "미디엄 그레이부터 차콜까지 무채색 계열 립 원단 재고. 슬랙스·이너·아우터 등 다목적 활용에 적합합니다." },
+  { code: "DG-I03", name: "더스티 컬러 혼합", cat: "가공 인벤토리", img: "/products/inventory-dusty.png", desc: "더스티 로즈·세이지·라벤더·베이지 등 뮤트 파스텔 계열 립 원단 재고. 시즌 감각의 캐주얼·라이프스타일 의류에 적합합니다." },
+  { code: "DG-I04", name: "딥 다크 혼합", cat: "가공 인벤토리", img: "/products/inventory-dark.png", desc: "네이비·버건디·포레스트그린·블랙 등 딥 다크 계열 립 원단 재고. 아우터·자켓·이너 등 시즌리스 베이직 아이템에 적합합니다." },
   // 편직 기계
   { code: "DG-M01", name: "편직 기계 20수", cat: "편직 기계", img: "/hwoasung/p3.jpg", desc: "20게이지 원통 편직기. 중간 두께 원단 생산에 최적화되어 있습니다." },
   { code: "DG-M02", name: "편직 기계 28수", cat: "편직 기계", img: "/hwoasung/p4.jpg", desc: "28게이지 고밀도 편직기. 얇고 섬세한 고급 원단 생산에 사용됩니다." },
@@ -96,7 +101,7 @@ const products = [
 export default function Business() {
   useScrollReveal();
   const [, navigate] = useLocation();
-  const [activeTab, setActiveTab] = useState<"all" | "편직 기계" | "립" | "골지" | "후라이스" | "와플">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "편직 기계" | "립" | "골지" | "후라이스" | "와플" | "가공 인벤토리">("all");
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   const filtered = activeTab === "all" ? products : products.filter((p) => p.cat === activeTab);
@@ -171,7 +176,7 @@ export default function Business() {
         <div className="reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20, marginBottom: 48 }}>
           <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>제품 아카이브</h2>
           <div style={{ display: "flex", gap: 8 }}>
-            {(["all", "편직 기계", "립", "골지", "후라이스", "와플"] as const).map((tab) => (
+            {(["all", "편직 기계", "립", "골지", "후라이스", "와플", "가공 인벤토리"] as const).map((tab) => (
               <button key={tab} onClick={() => setActiveTab(tab)} style={{
                 padding: "10px 18px",
                 fontSize: 10,
