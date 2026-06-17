@@ -148,10 +148,7 @@ export default function Business() {
       {/* UNIT 02 */}
       <div className="dg-section">
         <div className="dg-eyebrow reveal"><span className="ln" /><span>Unit 02</span><span className="sub">가공 인벤토리</span></div>
-        <div className="dg-two-col">
-          <div className="reveal">
-            <img src="/hwoasung/p3.jpg" alt="골지 원단 클로즈업" className="dg-img" />
-          </div>
+        <div className="dg-two-col" style={{ gridTemplateColumns: "1fr" }}>
           <div className="reveal">
             <h2 className="dg-big" style={{ fontSize: "clamp(28px,3.8vw,48px)" }}>가공 인벤토리</h2>
             <p className="dg-lead" style={{ marginTop: 28 }}>
