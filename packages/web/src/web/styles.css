@@ -630,6 +630,14 @@
   .dg-two-col.contact-wrap { grid-template-columns: 1fr !important; gap: 40px !important; }
   .dg-location-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
 
+  /* 히어로 타이틀 — 모바일: 하단 중앙 */
+  .dg-hero-title {
+    top: auto !important;
+    bottom: 22%;
+    transform: none !important;
+    text-align: center;
+  }
+
   /* 사업자 정보 줄바꿈 */
   .dg-bizinfo { padding: 16px 0 !important; }
   .dg-bizinfo p { word-break: keep-all; line-height: 2; font-size: 11px; }
