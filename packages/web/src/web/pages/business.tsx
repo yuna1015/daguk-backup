@@ -27,7 +27,7 @@ function Footer() {
     <footer style={{ background: "#f7f7f7", borderTop: `1px solid ${W.line}`, padding: "56px 36px 32px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 40, marginBottom: 48 }}>
         <div>
-          <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: ".1em", color: W.fg, marginBottom: 12 }}>Daguk Textile</div>
+          <div className="dg-fbrand" style={{ marginBottom: 12 }}>Daguk Textile</div>
           <p style={{ fontSize: 12, color: W.dim, lineHeight: 1.8 }}>다국텍스타일</p>
         </div>
         <div>
