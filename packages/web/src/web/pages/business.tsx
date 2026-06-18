@@ -215,9 +215,9 @@ export default function Business() {
         {/* 카드 그리드 */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+          gridTemplateColumns: "repeat(4, 1fr)",
           gap: "40px 20px",
-        }}>
+        }} className="biz-grid">
           {filtered.map((p, i) => (
             <div key={p.code}
               onMouseEnter={() => setHoveredIdx(i)}
@@ -288,6 +288,7 @@ export default function Business() {
       <style>{`
         @media (max-width: 768px) {
           .biz-two-col { grid-template-columns: 1fr !important; }
+          .biz-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 12px !important; }
         }
       `}</style>
     </div>
