@@ -22,32 +22,43 @@ const W = {
 
 function Nav({ active }: { active?: string }) {
   const [, navigate] = useLocation();
+  const links = [{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }];
   return (
     <nav style={{
       position: "sticky", top: 0, zIndex: 100,
       background: "#fff", borderBottom: `1px solid ${W.line}`,
-      display: "flex", alignItems: "center", justifyContent: "space-between",
-      padding: "0 36px", height: 60,
+      display: "flex", alignItems: "center",
+      padding: "0 36px", height: 60, gap: 0,
     }}>
+      {/* Logo */}
       <button onClick={() => navigate("/")} style={{
         background: "none", border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", gap: 10,
+        display: "flex", alignItems: "center", gap: 8,
         fontFamily: "Pretendard Variable, sans-serif",
-        fontSize: 13, fontWeight: 700, letterSpacing: ".12em", color: W.fg,
+        fontSize: 12, fontWeight: 700, letterSpacing: ".14em", color: W.fg,
+        padding: 0, flexShrink: 0,
       }}>
-        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 28 }} />
-        DAGUK TEXTILE
+        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 28, display: "block" }} />
       </button>
-      <div style={{ display: "flex", gap: 32 }}>
-        {[{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }].map((n) => (
-          <button key={n.p} onClick={() => navigate(n.p)} style={{
-            background: "none", border: "none", cursor: "pointer",
-            fontSize: 12, letterSpacing: ".1em", fontWeight: active === n.p.replace("/", "") ? 700 : 400,
-            color: active === n.p.replace("/", "") ? W.fg : W.dim,
-            borderBottom: active === n.p.replace("/", "") ? `1px solid ${W.fg}` : "1px solid transparent",
-            paddingBottom: 2, transition: "all .2s",
-          }}>{n.l}</button>
-        ))}
+      {/* Divider */}
+      <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: 1 }}>|</span>
+      {/* Links */}
+      <div style={{ display: "flex", gap: 24 }}>
+        {links.map((n) => {
+          const key = n.p.replace("/", "");
+          const isActive = active === key;
+          return (
+            <button key={n.p} onClick={() => navigate(n.p)} style={{
+              background: "none", border: "none", cursor: "pointer",
+              fontSize: 12, letterSpacing: ".08em",
+              fontWeight: isActive ? 700 : 400,
+              color: isActive ? W.fg : W.dim,
+              padding: "2px 0",
+              borderBottom: isActive ? `1px solid ${W.fg}` : "1px solid transparent",
+              transition: "all .2s",
+            }}>{n.l}</button>
+          );
+        })}
       </div>
     </nav>
   );
@@ -104,8 +115,7 @@ const products = [
   { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/rib-1x1-navy.png" },
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-2x1-navy.png" },
   { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/products/golgi-2x1-orange.png" },
-  { code: "DG-G02", name: "골지 더블", cat: "골지", img: "/products/golgi-2x1-orange.png" },
-  { code: "DG-F01", name: "후라이스 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png" },
+
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg" },

@@ -14,16 +14,40 @@ function useScrollReveal() {
 
 function Nav({ active }: { active?: string }) {
   const [, navigate] = useLocation();
+  const links = [{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }];
   return (
-    <nav className="dg-nav dg-nav-solid">
-      <button className="dg-brand" onClick={() => navigate("/")}>
-        <img src="/dg-logo.png" alt="DG" />
-        DAGUK TEXTILE
+    <nav style={{
+      position: "sticky", top: 0, zIndex: 100,
+      background: "#fff", borderBottom: "1px solid #e5e5e5",
+      display: "flex", alignItems: "center",
+      padding: "0 36px", height: 60, gap: 0,
+    }}>
+      <button onClick={() => navigate("/")} style={{
+        background: "none", border: "none", cursor: "pointer",
+        display: "flex", alignItems: "center", gap: 8,
+        fontFamily: "Pretendard Variable, sans-serif",
+        fontSize: 12, fontWeight: 700, letterSpacing: ".14em", color: "#111",
+        padding: 0, flexShrink: 0,
+      }}>
+        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 28, display: "block" }} />
       </button>
-      <div className="dg-navlinks">
-        <button onClick={() => navigate("/company")} className={active === "company" ? "active" : ""}>Company</button>
-        <button onClick={() => navigate("/business")} className={active === "business" ? "active" : ""}>Products</button>
-        <button onClick={() => navigate("/contact")} className={active === "contact" ? "active" : ""}>Contact</button>
+      <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: 1 }}>|</span>
+      <div style={{ display: "flex", gap: 24 }}>
+        {links.map((n) => {
+          const key = n.p.replace("/", "");
+          const isActive = active === key;
+          return (
+            <button key={n.p} onClick={() => navigate(n.p)} style={{
+              background: "none", border: "none", cursor: "pointer",
+              fontSize: 12, letterSpacing: ".08em",
+              fontWeight: isActive ? 700 : 400,
+              color: isActive ? "#111" : "#666",
+              padding: "2px 0",
+              borderBottom: isActive ? "1px solid #111" : "1px solid transparent",
+              transition: "all .2s",
+            }}>{n.l}</button>
+          );
+        })}
       </div>
     </nav>
   );
