@@ -38,7 +38,7 @@ function Nav({ active }: { active?: string }) {
         fontSize: 12, fontWeight: 700, letterSpacing: ".14em", color: W.fg,
         padding: 0, flexShrink: 0,
       }}>
-        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 28, display: "block" }} />
+        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 32, display: "block" }} />
       </button>
       {/* Divider */}
       <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: 1 }}>|</span>
