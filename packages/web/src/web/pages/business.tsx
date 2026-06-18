@@ -110,12 +110,9 @@ const products = [
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg" },
   { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg" },
-  { code: "DG-I03", name: "더스티 컬러 혼합", cat: "가공 인벤토리", img: "/products/inventory-dusty.png" },
-  { code: "DG-M01", name: "편직 기계 20수", cat: "편직 기계", img: "/hwoasung/p3.jpg" },
-  { code: "DG-M02", name: "편직 기계 28수", cat: "편직 기계", img: "/hwoasung/p4.jpg" },
 ];
 
-const TABS = ["all", "립", "골지", "후라이스", "와플", "가공 인벤토리", "편직 기계"] as const;
+const TABS = ["all", "립", "골지", "후라이스", "와플"] as const;
 type Tab = typeof TABS[number];
 
 export default function Business() {
@@ -123,7 +120,8 @@ export default function Business() {
   const [, navigate] = useLocation();
   const [activeTab, setActiveTab] = useState<Tab>("all");
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const filtered = activeTab === "all" ? products : products.filter((p) => p.cat === activeTab);
+  const filtered = (activeTab === "all" ? products : products.filter((p) => p.cat === activeTab))
+    .filter((p) => p.cat !== "가공 인벤토리" && p.cat !== "편직 기계");
 
   return (
     <div style={{ background: W.bg, minHeight: "100vh", fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>
@@ -156,14 +154,14 @@ export default function Business() {
             ))}
           </div>
         </div>
-        <div style={{ overflow: "hidden" }}>
-          <img src="/hwoasung/knitting_unit.jpg" alt="편직 생지" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        <div style={{ overflow: "hidden", padding: "32px 32px 32px 0" }}>
+          <img src="/hwoasung/knitting_unit.jpg" alt="편직 생지" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
         </div>
       </div>
 
       {/* Unit 02 — 가공 인벤토리 */}
       <div className="biz-two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: `1px solid ${W.line}` }}>
-        <div style={{ overflow: "hidden" }}>
+        <div style={{ overflow: "hidden", padding: "32px 0 32px 32px" }}>
           <img src="/products/inventory-dusty.png" alt="가공 인벤토리" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
         </div>
         <div style={{ padding: "64px 36px" }}>
