@@ -19,30 +19,37 @@ function Nav({ active }: { active?: string }) {
     <nav style={{
       position: "sticky", top: 0, zIndex: 100,
       background: "#fff", borderBottom: "1px solid #e5e5e5",
-      display: "flex", alignItems: "center",
-      padding: "0 36px", height: 60, gap: 0,
+      display: "flex", justifyContent: "space-between", alignItems: "center",
+      padding: "0 36px", height: 60,
     }}>
+      {/* 왼쪽: 로고 + DAGUK TEXTILE */}
       <button onClick={() => navigate("/")} style={{
         background: "none", border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", gap: 8,
-        fontFamily: "Pretendard Variable, sans-serif",
-        fontSize: 12, fontWeight: 700, letterSpacing: ".14em", color: "#111",
+        display: "flex", alignItems: "center", gap: 10,
         padding: 0, flexShrink: 0,
       }}>
-        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 32, display: "block", verticalAlign: "middle", flexShrink: 0 }} />
+        <img src="/dg-logo-dark.png" alt="DG"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+          style={{ height: 36, display: "block" }} />
+        <span style={{
+          fontFamily: "Pretendard Variable, sans-serif",
+          fontSize: 13, fontWeight: 500, letterSpacing: ".22em",
+          textTransform: "uppercase", color: "#111",
+        }}>DAGUK TEXTILE</span>
       </button>
-      <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: "60px", alignSelf: "center" }}>|</span>
-      <div style={{ display: "flex", gap: 24 }}>
+      {/* 오른쪽: 링크 */}
+      <div style={{ display: "flex", gap: 30 }}>
         {links.map((n) => {
           const key = n.p.replace("/", "");
           const isActive = active === key;
           return (
             <button key={n.p} onClick={() => navigate(n.p)} style={{
               background: "none", border: "none", cursor: "pointer",
-              fontSize: 12, letterSpacing: ".08em",
-              fontWeight: isActive ? 700 : 400,
-              color: isActive ? "#111" : "#666",
-              padding: "2px 0",
+              fontFamily: "Pretendard Variable, sans-serif",
+              fontSize: 13, letterSpacing: ".18em", textTransform: "uppercase",
+              fontWeight: isActive ? 600 : 400,
+              color: isActive ? "#111" : "#888",
+              padding: 0,
               borderBottom: isActive ? "1px solid #111" : "1px solid transparent",
               transition: "all .2s",
             }}>{n.l}</button>
