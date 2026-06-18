@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
+import { NavBar } from "./NavBar";
 
 // ─── Scroll reveal ────────────────────────────────────────────────────────────
 function useScrollReveal() {
@@ -11,47 +12,6 @@ function useScrollReveal() {
     document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
-}
-
-// ─── Nav ──────────────────────────────────────────────────────────────────────
-function Nav() {
-  const [, navigate] = useLocation();
-  const goto = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  const links = [{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }];
-
-  return (
-    <nav style={{
-      position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
-      display: "flex", justifyContent: "space-between", alignItems: "center",
-      height: 60, padding: "0 36px",
-    }}>
-      {/* 왼쪽: 로고 + DAGUK TEXTILE */}
-      <button onClick={() => goto("hero")} style={{
-        background: "none", border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", gap: 10,
-        padding: 0, flexShrink: 0,
-      }}>
-        <img src="/dg-logo.png" alt="DG" style={{ height: 24, display: "block" }} />
-        <span style={{
-          fontFamily: "Pretendard Variable, sans-serif",
-          fontSize: 13, fontWeight: 500, letterSpacing: ".22em",
-          textTransform: "uppercase", color: "#fff",
-        }}>DAGUK TEXTILE</span>
-      </button>
-      {/* 오른쪽: 링크 */}
-      <div style={{ display: "flex", gap: 30 }}>
-        {links.map((n) => (
-          <button key={n.p} onClick={() => navigate(n.p)} style={{
-            background: "none", border: "none", cursor: "pointer",
-            fontFamily: "Pretendard Variable, sans-serif",
-            fontSize: 13, letterSpacing: ".18em", textTransform: "uppercase",
-            fontWeight: 400, color: "rgba(255,255,255,0.85)",
-            padding: 0, transition: "opacity .2s",
-          }}>{n.l}</button>
-        ))}
-      </div>
-    </nav>
-  );
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
@@ -313,7 +273,7 @@ export default function Index() {
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <div className="grain" />
-      <Nav />
+      <NavBar dark={true} />
       <Hero />
       <CompanyBlock />
       <Products />
