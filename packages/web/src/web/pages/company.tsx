@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { NavBar } from "./NavBar";
 import { useLocation } from "wouter";
 
 function useScrollReveal() {
@@ -10,54 +11,6 @@ function useScrollReveal() {
     document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
-}
-
-function Nav({ active }: { active?: string }) {
-  const [, navigate] = useLocation();
-  const links = [{ l: "Company", p: "/company" }, { l: "Products", p: "/business" }, { l: "Contact", p: "/contact" }];
-  return (
-    <nav style={{
-      position: "sticky", top: 0, zIndex: 100,
-      background: "#fff", borderBottom: "1px solid #e5e5e5",
-      display: "flex", justifyContent: "space-between", alignItems: "center",
-      padding: "0 36px", height: 60,
-    }}>
-      {/* 왼쪽: 로고 + DAGUK TEXTILE */}
-      <button onClick={() => navigate("/")} style={{
-        background: "none", border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", gap: 10,
-        padding: 0, flexShrink: 0,
-      }}>
-        <img src="/dg-logo-dark.png" alt="DG"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-          style={{ height: 24, display: "block" }} />
-        <span style={{
-          fontFamily: "Pretendard Variable, sans-serif",
-          fontSize: 13, fontWeight: 500, letterSpacing: ".22em",
-          textTransform: "uppercase", color: "#111",
-        }}>DAGUK TEXTILE</span>
-      </button>
-      {/* 오른쪽: 링크 */}
-      <div style={{ display: "flex", gap: 30 }}>
-        {links.map((n) => {
-          const key = n.p.replace("/", "");
-          const isActive = active === key;
-          return (
-            <button key={n.p} onClick={() => navigate(n.p)} style={{
-              background: "none", border: "none", cursor: "pointer",
-              fontFamily: "Pretendard Variable, sans-serif",
-              fontSize: 13, letterSpacing: ".18em", textTransform: "uppercase",
-              fontWeight: isActive ? 600 : 400,
-              color: isActive ? "#111" : "#888",
-              padding: 0,
-              borderBottom: isActive ? "1px solid #111" : "1px solid transparent",
-              transition: "all .2s",
-            }}>{n.l}</button>
-          );
-        })}
-      </div>
-    </nav>
-  );
 }
 
 function Footer() {
@@ -94,7 +47,7 @@ export default function Company() {
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <div className="grain" />
-      <Nav active="company" />
+      <NavBar active="company" />
 
       {/* Page Hero */}
       <div className="dg-page-hero">
