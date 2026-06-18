@@ -29,9 +29,9 @@ function Nav({ active }: { active?: string }) {
         fontSize: 12, fontWeight: 700, letterSpacing: ".14em", color: "#111",
         padding: 0, flexShrink: 0,
       }}>
-        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 32, display: "block" }} />
+        <img src="/dg-logo-dark.png" alt="DG" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} style={{ height: 32, display: "block", verticalAlign: "middle", flexShrink: 0 }} />
       </button>
-      <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: 1 }}>|</span>
+      <span style={{ margin: "0 18px", color: "#ccc", fontSize: 16, fontWeight: 300, lineHeight: "60px", alignSelf: "center" }}>|</span>
       <div style={{ display: "flex", gap: 24 }}>
         {links.map((n) => {
           const key = n.p.replace("/", "");
