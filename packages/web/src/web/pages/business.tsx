@@ -173,27 +173,6 @@ export default function Business() {
         </div>
       </div>
 
-      {/* Unit 02 — 가공 인벤토리 */}
-      <div className="biz-two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: `1px solid ${W.line}` }}>
-        <div style={{ overflow: "hidden", padding: "32px 0 32px 32px" }}>
-          <img src="/products/inventory-dusty.png" alt="가공 인벤토리" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
-        </div>
-        <div style={{ padding: "64px 36px" }}>
-          <p style={{ fontSize: 10, letterSpacing: ".2em", color: W.sub, marginBottom: 28 }}>UNIT 02 — 가공 인벤토리</p>
-          <h2 style={{ fontSize: "clamp(22px,3vw,36px)", fontWeight: 700, color: W.fg, marginBottom: 24, lineHeight: 1.3 }}>가공 인벤토리</h2>
-          <p style={{ fontSize: 14, color: W.dim, lineHeight: 1.9, marginBottom: 32 }}>
-            다국텍스타일이 엄선하고 데이터화한 프리미엄 편직 원단 인벤토리입니다. 다이마루 · 립 · 골지 전 라인업을 즉시 확인하고 샘플을 요청하세요.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {["기성 재고 즉시 출고 가능", "색상 · 중량 · 게이지 전 스펙 제공", "최소 주문량 협의 가능 (소량 OK)", "샘플 요청 후 3일 내 발송"].map((v) => (
-              <div key={v} style={{ display: "flex", gap: 12, fontSize: 13, color: W.dim, alignItems: "flex-start" }}>
-                <span style={{ color: W.sub, flexShrink: 0 }}>—</span><span>{v}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Archive */}
       <div style={{ padding: "64px 36px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16, marginBottom: 40 }}>
