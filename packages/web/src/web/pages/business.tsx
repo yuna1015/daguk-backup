@@ -27,7 +27,7 @@ function Footer() {
     <footer style={{ background: "#f7f7f7", borderTop: `1px solid ${W.line}`, padding: "56px 36px 32px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 40, marginBottom: 48 }}>
         <div>
-          <div className="dg-fbrand" style={{ marginBottom: 12 }}>Daguk Textile</div>
+          <div className="dg-fbrand" style={{ marginBottom: 12, color: "#111" }}>Daguk Textile</div>
           <p style={{ fontSize: 12, color: W.dim, lineHeight: 1.8 }}>다국텍스타일</p>
         </div>
         <div>
@@ -121,7 +121,7 @@ export default function Business() {
             ))}
           </div>
         </div>
-        <div style={{ overflow: "hidden", padding: "32px 32px 32px 0" }}>
+        <div className="biz-unit-img" style={{ overflow: "hidden", padding: "32px 32px 32px 0" }}>
           <img src="/hwoasung/knitting_unit.jpg" alt="편직 생지" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
         </div>
       </div>
@@ -233,6 +233,8 @@ export default function Business() {
         @media (max-width: 768px) {
           .biz-two-col { grid-template-columns: 1fr !important; }
           .biz-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 12px !important; }
+          .biz-unit-img { padding: 0 20px 32px 20px !important; }
+          .biz-two-col > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
     </div>
