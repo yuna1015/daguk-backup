@@ -31,7 +31,7 @@ function Nav() {
         display: "flex", alignItems: "center", gap: 10,
         padding: 0, flexShrink: 0,
       }}>
-        <img src="/dg-logo.png" alt="DG" style={{ height: 36, display: "block" }} />
+        <img src="/dg-logo.png" alt="DG" style={{ height: 24, display: "block" }} />
         <span style={{
           fontFamily: "Pretendard Variable, sans-serif",
           fontSize: 13, fontWeight: 500, letterSpacing: ".22em",

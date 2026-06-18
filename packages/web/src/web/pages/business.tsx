@@ -38,7 +38,7 @@ function Nav({ active }: { active?: string }) {
       }}>
         <img src="/dg-logo-dark.png" alt="DG"
           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-          style={{ height: 36, display: "block" }} />
+          style={{ height: 24, display: "block" }} />
         <span style={{
           fontFamily: "Pretendard Variable, sans-serif",
           fontSize: 13, fontWeight: 500, letterSpacing: ".22em",
