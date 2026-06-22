@@ -105,7 +105,7 @@ export default function Business() {
       <NavBar active="business" />
 
       {/* Page Hero */}
-      <div style={{ padding: "72px 36px 56px", borderBottom: `1px solid ${W.line}` }}>
+      <div className="biz-hero" style={{ padding: "72px 36px 56px", borderBottom: `1px solid ${W.line}` }}>
         <p style={{ fontSize: 11, letterSpacing: ".2em", color: W.sub, marginBottom: 20 }}>CONSTRUCTION</p>
         <h1 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 700, color: W.fg, lineHeight: 1.15, marginBottom: 20 }}>
           CONSTRUCTION<br /><span style={{ fontWeight: 400, fontSize: "0.6em", letterSpacing: ".05em" }}>편직 구조</span>
@@ -137,7 +137,7 @@ export default function Business() {
       </div>
 
       {/* Archive */}
-      <div style={{ padding: "64px 36px" }}>
+      <div className="biz-archive" style={{ padding: "64px 36px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16, marginBottom: 40 }}>
           <div>
             <p style={{ fontSize: 10, letterSpacing: ".2em", color: W.sub, marginBottom: 12 }}>ARCHIVE</p>
@@ -207,7 +207,7 @@ export default function Business() {
       </div>
 
       {/* Process */}
-      <div style={{ background: "#f7f7f7", borderTop: `1px solid ${W.line}`, padding: "72px 36px" }}>
+      <div className="biz-process" style={{ background: "#f7f7f7", borderTop: `1px solid ${W.line}`, padding: "72px 36px" }}>
         <p style={{ fontSize: 10, letterSpacing: ".2em", color: W.sub, marginBottom: 16 }}>PROCESS</p>
         <h2 style={{ fontSize: "clamp(24px,3.5vw,44px)", fontWeight: 700, color: W.fg, marginBottom: 56 }}>샘플부터 납품까지</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 2 }}>
@@ -227,7 +227,7 @@ export default function Business() {
       </div>
 
       {/* CTA */}
-      <div style={{ padding: "96px 36px", textAlign: "center", borderTop: `1px solid ${W.line}` }}>
+      <div className="biz-cta" style={{ padding: "96px 36px", textAlign: "center", borderTop: `1px solid ${W.line}` }}>
         <h2 style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: W.fg, marginBottom: 16 }}>샘플 문의하기</h2>
         <p style={{ color: W.dim, marginBottom: 40, fontSize: 15 }}>원단 스펙 · 수량 · 납기 — 편하게 물어보세요.</p>
         <button
@@ -251,8 +251,16 @@ export default function Business() {
         @media (max-width: 768px) {
           .biz-two-col { grid-template-columns: 1fr !important; }
           .biz-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 12px !important; }
-          .biz-unit-img { padding: 0 20px 32px 20px !important; }
-          .biz-two-col > div { padding-left: 20px !important; padding-right: 20px !important; }
+          .biz-unit-img { padding: 0 20px 24px 20px !important; }
+          .biz-two-col > div { padding-left: 20px !important; padding-right: 20px !important; padding-top: 36px !important; padding-bottom: 36px !important; }
+          /* 히어로 섹션 */
+          .biz-hero { padding: 48px 20px 36px !important; }
+          /* 아카이브 섹션 */
+          .biz-archive { padding: 40px 20px !important; }
+          /* 프로세스 섹션 */
+          .biz-process { padding: 40px 20px !important; }
+          /* CTA 섹션 */
+          .biz-cta { padding: 52px 20px !important; }
         }
       `}</style>
     </div>
