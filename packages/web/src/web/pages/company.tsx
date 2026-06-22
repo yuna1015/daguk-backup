@@ -43,6 +43,10 @@ function Footer() {
 export default function Company() {
   useScrollReveal();
   const [, navigate] = useLocation();
+  useEffect(() => {
+    document.body.classList.add("light-page");
+    return () => document.body.classList.remove("light-page");
+  }, []);
 
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh" }}>

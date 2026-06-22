@@ -51,6 +51,10 @@ const partners = [
 export default function ContactPage() {
   useScrollReveal();
   const [, navigate] = useLocation();
+  useEffect(() => {
+    document.body.classList.add("light-page");
+    return () => document.body.classList.remove("light-page");
+  }, []);
   const [form, setForm] = useState({ company: "", name: "", tel: "", email: "", type: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 

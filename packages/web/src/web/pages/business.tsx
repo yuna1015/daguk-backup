@@ -90,6 +90,10 @@ type Tab = typeof TABS[number];
 export default function Business() {
   useScrollReveal();
   const [, navigate] = useLocation();
+  useEffect(() => {
+    document.body.classList.add("light-page");
+    return () => document.body.classList.remove("light-page");
+  }, []);
   const [activeTab, setActiveTab] = useState<Tab>("all");
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const filtered = (activeTab === "all" ? products : products.filter((p) => p.cat === activeTab))
