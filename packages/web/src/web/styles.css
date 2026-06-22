@@ -662,6 +662,10 @@
     bottom: 22%;
     transform: none !important;
     text-align: center;
+    align-items: center;
+  }
+  .hero-brand-row {
+    justify-content: center;
   }
 
   /* 사업자 정보 줄바꿈 */
