@@ -78,8 +78,7 @@ const products = [
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png" },
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
-  { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg" },
-  { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg" },
+  { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s.jpg" },
 ];
 
 const TABS = ["all", "립", "골지", "후라이스", "와플"] as const;
