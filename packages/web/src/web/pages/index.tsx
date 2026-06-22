@@ -99,11 +99,14 @@ function Hero() {
       <div className="dg-hero-veil" />
 
       <div className="dg-hero-title">
-        <h1>Daguk Textile</h1>
-      </div>
-
-      <div className="dg-hero-sub">
-        <p className="en">Surface evolves through light, time, and thread.</p>
+        <p className="hero-quote">&ldquo;The Original in Rib Knit&rdquo;</p>
+        <div className="hero-brand-row">
+          <span className="hero-brand-kr">다국텍스타일</span>
+          {/* D 심볼 인라인 SVG */}
+          <svg className="hero-brand-sym" viewBox="-1 -1 55 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 37V0L27.5 0.25C35 0.75 52 8.5 47.3 28.2C44 43 25.8 45.7 17.8 45V13L26 12.7V37C31 37.1 40.7 34.1 39.7 20.3C39.3 14.6 35.6 10.8 30.8 9.2C24 6.8 14.9 8 8.2 8V37H0Z" fill="white"/>
+          </svg>
+        </div>
       </div>
 
       <div className="scroll-hint">

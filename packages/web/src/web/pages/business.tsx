@@ -53,31 +53,32 @@ function Footer() {
   );
 }
 
-const products = [
+const products: { code: string; name: string; cat: string; img: string; tag?: string }[] = [
   { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "립", img: "/products/rib-2x1-white.png" },
   { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "립", img: "/products/rib-2x1-beige.png" },
   { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "립", img: "/products/rib-2x1-gray.png" },
   { code: "CM30SP70 2×1", name: "CM30SP70 2×1", cat: "립", img: "/products/golgi-2x1-orange.png" },
   { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "립", img: "/products/rib-2x1-navy.png" },
   { code: "CM30이합 SP70 2×1", name: "CM30이합 SP70 2×1", cat: "립", img: "/products/rib-2x1-gray.png" },
-  { code: "CM30단사 1×1", name: "CM30단사 1×1 노스판", cat: "립", img: "/products/rib-1x1-white.png" },
-  { code: "CM20단사 1×1", name: "CM20단사 1×1 노스판", cat: "립", img: "/products/rib-1x1-beige.png" },
-  { code: "CM40단사 1×1", name: "CM40단사 1×1 노스판", cat: "립", img: "/products/rib-1x1-gray.png" },
-  { code: "CM30이합 1×1", name: "CM30이합 1×1 노스판", cat: "립", img: "/products/rib-1x1-charcoal.png" },
-  { code: "CM20이합 1×1", name: "CM20이합 1×1 노스판", cat: "립", img: "/products/rib-1x1-gray.png" },
-  { code: "CVC20단사 1×1", name: "CVC20단사 1×1 노스판", cat: "립", img: "/products/cvc-1x1-white.png" },
-  { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "립", img: "/products/rib-1x1-beige.png" },
   { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "립", img: "/products/rib-2x1-beige.png" },
-  { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "립", img: "/products/cvc-1x1-beige.png" },
-  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/cvc-1x1-navy.png" },
   { code: "TC 65/35 SP140 2×1", name: "TC 65/35 SP140 2×1", cat: "립", img: "/products/tc-sp140-navy.png" },
   { code: "TC 65/35 SP70 2×1", name: "TC 65/35 SP70 2×1", cat: "립", img: "/products/tc-sp70-burgundy.png" },
-  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "립", img: "/products/tc-single-ivory.png" },
-  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "립", img: "/products/tc-double-green.png" },
+
+  { code: "CM30단사 1×1", name: "CM30단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-white.png" },
+  { code: "CM20단사 1×1", name: "CM20단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-beige.png" },
+  { code: "CM40단사 1×1", name: "CM40단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-gray.png" },
+  { code: "CM30이합 1×1", name: "CM30이합 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-charcoal.png" },
+  { code: "CM20이합 1×1", name: "CM20이합 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-gray.png" },
+  { code: "CVC20단사 1×1", name: "CVC20단사 1×1 노스판", cat: "후라이스", img: "/products/cvc-1x1-white.png" },
+  { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "후라이스", img: "/products/rib-1x1-beige.png" },
+  { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "후라이스", img: "/products/cvc-1x1-beige.png" },
+  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "후라이스", img: "/products/cvc-1x1-navy.png" },
+  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "후라이스", img: "/products/tc-single-ivory.png" },
+  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "후라이스", img: "/products/tc-double-green.png" },
 
   { code: "DG-G02", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-8x2.jpg" },
   { code: "DG-G03", name: "스트라이프 2×2 골지", cat: "골지", img: "/products/stripe-golgi-2x2.jpg" },
-
+  { code: "DG-G04", name: "포인텔 골지", cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
 
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
@@ -105,9 +106,9 @@ export default function Business() {
 
       {/* Page Hero */}
       <div style={{ padding: "72px 36px 56px", borderBottom: `1px solid ${W.line}` }}>
-        <p style={{ fontSize: 11, letterSpacing: ".2em", color: W.sub, marginBottom: 20 }}>PRODUCTS</p>
+        <p style={{ fontSize: 11, letterSpacing: ".2em", color: W.sub, marginBottom: 20 }}>CONSTRUCTION</p>
         <h1 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 700, color: W.fg, lineHeight: 1.15, marginBottom: 20 }}>
-          Knitting · Greige<br />&amp; Finishing
+          CONSTRUCTION<br /><span style={{ fontWeight: 400, fontSize: "0.6em", letterSpacing: ".05em" }}>편직 구조</span>
         </h1>
         <p style={{ fontSize: 15, color: W.dim, maxWidth: 520, lineHeight: 1.8 }}>
           다이마루 · 립 · 골지 전 라인업. 샘플부터 대량 납품까지.
@@ -123,7 +124,7 @@ export default function Business() {
             최신 고성능 환편기와 다양한 게이지의 설비 인프라를 통해, 어떠한 샘플 스펙에도 즉각적으로 대응하는 탄탄한 생산 기반을 갖추고 있습니다.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {["고성능 환편기 25대 운용", "다양한 게이지 — 7G · 12G · 14G · 18G", "면 · 폴리 · 레이온 · 혼방 전 소재 대응", "즉시 생산 가능 — 일반 납기 대비 단축"].map((v) => (
+            {["원형 환편기 25대 풀가동 — 쌍용·금용·경보", "게이지 13.5G~24G 전 구간 커버", "36인치 7대 · 32인치 18대 — 광폭·정폭 동시 대응", "침수 최대 2,454 — 세밀 조직부터 굵은 립까지", "면·폴리·레이온·혼방 전 소재 대응"].map((v) => (
               <div key={v} style={{ display: "flex", gap: 12, fontSize: 13, color: W.dim, alignItems: "flex-start" }}>
                 <span style={{ color: W.sub, flexShrink: 0 }}>—</span><span>{v}</span>
               </div>
@@ -176,7 +177,7 @@ export default function Business() {
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
               style={{ cursor: "pointer" }}>
-              <div style={{ overflow: "hidden", marginBottom: 12, background: "#f5f5f5" }}>
+              <div style={{ overflow: "hidden", marginBottom: 12, background: "#f5f5f5", position: "relative" }}>
                 <img
                   src={p.img}
                   alt={p.name}
@@ -189,6 +190,14 @@ export default function Business() {
                     transform: hoveredIdx === i ? "scale(1.05)" : "scale(1)",
                   }}
                 />
+                {p.tag && (
+                  <span style={{
+                    position: "absolute", top: 10, left: 10,
+                    background: W.fg, color: "#fff",
+                    fontSize: 9, letterSpacing: ".15em", fontWeight: 700,
+                    padding: "3px 8px",
+                  }}>{p.tag}</span>
+                )}
               </div>
               <p style={{ fontSize: 13, fontWeight: 500, color: W.fg, marginBottom: 4, lineHeight: 1.4 }}>{p.name}</p>
               <p style={{ fontSize: 11, color: W.sub, letterSpacing: ".04em" }}>{p.cat}</p>
