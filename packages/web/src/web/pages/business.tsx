@@ -74,11 +74,11 @@ const products = [
   { code: "TC 65/35 SP70 2×1", name: "TC 65/35 SP70 2×1", cat: "립", img: "/products/tc-sp70-burgundy.png" },
   { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "립", img: "/products/tc-single-mustard.png" },
   { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "립", img: "/products/tc-double-slate.png" },
-  { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/products/golgi-2x1-orange.png" },
+
   { code: "DG-G02", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-8x2.jpg" },
   { code: "DG-G03", name: "스트라이프 2×2 골지", cat: "골지", img: "/products/stripe-golgi-2x2.jpg" },
 
-  { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png" },
+
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s.jpg" },
