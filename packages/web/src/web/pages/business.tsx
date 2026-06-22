@@ -72,8 +72,8 @@ const products = [
   { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/cvc-1x1-navy.png" },
   { code: "TC 65/35 SP140 2×1", name: "TC 65/35 SP140 2×1", cat: "립", img: "/products/tc-sp140-navy.png" },
   { code: "TC 65/35 SP70 2×1", name: "TC 65/35 SP70 2×1", cat: "립", img: "/products/tc-sp70-burgundy.png" },
-  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "립", img: "/products/tc-single-mustard.png" },
-  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "립", img: "/products/tc-double-slate.png" },
+  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "립", img: "/products/tc-single-ivory.png" },
+  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "립", img: "/products/tc-double-green.png" },
 
   { code: "DG-G02", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-8x2.jpg" },
   { code: "DG-G03", name: "스트라이프 2×2 골지", cat: "골지", img: "/products/stripe-golgi-2x2.jpg" },
