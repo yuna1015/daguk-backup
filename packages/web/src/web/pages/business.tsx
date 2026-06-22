@@ -72,8 +72,11 @@ const products = [
   { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "립", img: "/products/rib-1x1-navy.png" },
   { code: "TC 65/35", name: "TC 65/35", cat: "립", img: "/products/rib-2x1-navy.png" },
   { code: "DG-G01", name: "골지 싱글", cat: "골지", img: "/products/golgi-2x1-orange.png" },
+  { code: "DG-G02", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-8x2.jpg" },
+  { code: "DG-G03", name: "스트라이프 2×2 골지", cat: "골지", img: "/products/stripe-golgi-2x2.jpg" },
 
   { code: "DG-F02", name: "후라이스 기모 1×1", cat: "후라이스", img: "/products/fryce-1x1-rib.png" },
+  { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 싱글", cat: "와플", img: "/hwoasung/p1.jpg" },
   { code: "DG-W02", name: "와플 더블", cat: "와플", img: "/hwoasung/p2.jpg" },
