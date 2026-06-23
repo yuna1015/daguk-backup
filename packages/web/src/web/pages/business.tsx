@@ -104,7 +104,7 @@ function Footer() {
   );
 }
 
-const products: { code: string; name: string; cat: string; img: string; tag?: string; hideCaption?: boolean }[] = [
+const products: { code: string; name: string; cat: string; img: string; tag?: string; hideCaption?: boolean; specs?: { gauge?: string; inch?: string; needles?: string; qty?: string } }[] = [
   { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "골지", img: "/products/rib-2x1-white.png" },
   { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "골지", img: "/products/rib-2x1-beige.png" },
   { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "골지", img: "/products/rib-2x1-gray.png" },
@@ -136,10 +136,14 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
 
   { code: "CP CM40 PE75", name: "CP이중지 CM40 PE75", cat: "후라이스", img: "/products/daemaru-02.png" },
 
-  { code: "MACHINE-01", name: "쌍용 환편기", cat: "편직기계", img: "/products/machine-ssangyong-01.jpg" },
-  { code: "MACHINE-02", name: "금용 환편기 #12", cat: "편직기계", img: "/products/machine-keumyong-01.jpg" },
-  { code: "MACHINE-03", name: "경보 환편기", cat: "편직기계", img: "/products/machine-kyungbo-01.jpg" },
-  { code: "MACHINE-04", name: "금용 환편기 #27", cat: "편직기계", img: "/products/machine-keumyong-02.jpg" },
+  { code: "MACHINE-01", name: "쌍용 환편기", cat: "편직기계", img: "/products/machine-ssangyong-01.jpg",
+    specs: { gauge: "18G · 22G", inch: "36\" · 32\"", needles: "2064 / 2356 / 2454 / 2064 / 1800 / 1680", qty: "36\" 1대  ·  32\" 4대" } },
+  { code: "MACHINE-02", name: "금용 환편기", cat: "편직기계", img: "/products/machine-keumyong-01.jpg",
+    specs: { gauge: "18G · 24G · 13.5G", inch: "36\" · 32\"", needles: "2064 / 1560 / 2412 / 1320 / 1680 / 1800", qty: "36\" 2대  ·  32\" 4대" } },
+  { code: "MACHINE-03", name: "경보 환편기", cat: "편직기계", img: "/products/machine-kyungbo-01.jpg",
+    specs: { gauge: "13.5G · 18G · 20G", inch: "36\"", needles: "2064 / 2280 / 2208 / 1584", qty: "36\" 6대" } },
+  { code: "MACHINE-04", name: "금용 환편기 #27", cat: "편직기계", img: "/products/machine-keumyong-02.jpg",
+    specs: { gauge: "13.5G", inch: "32\"", needles: "1320", qty: "32\" 2대" } },
 ];
 
 const TABS = ["all", "후라이스", "골지", "와플", "편직기계"] as const;
@@ -167,7 +171,7 @@ export default function Business() {
       <div className="biz-hero" style={{ padding: "64px 36px 64px", borderBottom: `1px solid ${W.line}` }}>
         <p style={{ fontSize: 10, letterSpacing: ".25em", color: W.sub, marginBottom: 16, textTransform: "uppercase", fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>PRODUCTS</p>
         <h1 style={{ fontSize: 32, fontWeight: 700, color: W.fg, lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16, fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>
-          Construction | 편직 구조
+          Construction / 편직 구조
         </h1>
         <p style={{ fontSize: 15, color: W.dim, maxWidth: 480, lineHeight: 2, letterSpacing: ".01em" }}>
           다이마루 · 립 · 골지 전 라인업.<br />샘플부터 대량 납품까지.
@@ -262,6 +266,13 @@ export default function Business() {
               </div>
               {!p.hideCaption && <p style={{ fontSize: 12, fontWeight: 600, color: W.fg, marginBottom: 4, lineHeight: 1.5, letterSpacing: ".01em" }}>{p.name}</p>}
               {!p.hideCaption && <p style={{ fontSize: 10, color: W.sub, letterSpacing: ".12em", textTransform: "uppercase" }}>{p.cat}</p>}
+              {p.specs && (
+                <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 3 }}>
+                  {p.specs.gauge && <p style={{ fontSize: 10, color: W.dim, margin: 0 }}><span style={{ color: W.sub, marginRight: 6 }}>G</span>{p.specs.gauge}</p>}
+                  {p.specs.inch && <p style={{ fontSize: 10, color: W.dim, margin: 0 }}><span style={{ color: W.sub, marginRight: 6 }}>IN</span>{p.specs.inch}</p>}
+                  {p.specs.qty && <p style={{ fontSize: 10, color: W.dim, margin: 0, fontWeight: 600 }}>{p.specs.qty}</p>}
+                </div>
+              )}
             </div>
           ))}
         </div>
