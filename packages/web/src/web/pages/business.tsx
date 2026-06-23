@@ -84,7 +84,7 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s-drape.png" },
 
   { code: "DG-DM01", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-01.png" },
-  { code: "DG-DM02", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-02.png" },
+  { code: "CP CM40 PE75", name: "CP이중지 CM40 PE75", cat: "다이마루", img: "/products/daemaru-02.png" },
   { code: "DG-DM03", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-03.png" },
 ];
 
