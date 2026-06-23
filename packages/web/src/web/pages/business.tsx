@@ -104,13 +104,13 @@ export default function Business() {
       <NavBar active="business" />
 
       {/* Page Hero */}
-      <div className="biz-hero" style={{ padding: "72px 36px 56px", borderBottom: `1px solid ${W.line}` }}>
-        <p style={{ fontSize: 11, letterSpacing: ".2em", color: W.sub, marginBottom: 20 }}>CONSTRUCTION</p>
-        <h1 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 700, color: W.fg, lineHeight: 1.15, marginBottom: 20 }}>
-          CONSTRUCTION<br /><span style={{ fontWeight: 400, fontSize: "0.6em", letterSpacing: ".05em" }}>편직 구조</span>
+      <div className="biz-hero" style={{ padding: "80px 36px 64px", borderBottom: `1px solid ${W.line}` }}>
+        <p style={{ fontSize: 10, letterSpacing: ".25em", color: W.sub, marginBottom: 24, textTransform: "uppercase" }}>Construction</p>
+        <h1 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 700, color: W.fg, lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 24 }}>
+          편직 구조
         </h1>
-        <p style={{ fontSize: 15, color: W.dim, maxWidth: 520, lineHeight: 1.8 }}>
-          다이마루 · 립 · 골지 전 라인업. 샘플부터 대량 납품까지.
+        <p style={{ fontSize: 15, color: W.dim, maxWidth: 480, lineHeight: 2, letterSpacing: ".01em" }}>
+          다이마루 · 립 · 골지 전 라인업.<br />샘플부터 대량 납품까지.
         </p>
       </div>
 
@@ -176,13 +176,13 @@ export default function Business() {
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
               style={{ cursor: "pointer" }}>
-              <div style={{ overflow: "hidden", marginBottom: 12, background: "#f5f5f5", position: "relative" }}>
+              <div style={{ overflow: "hidden", marginBottom: 12, background: "#f5f5f5", position: "relative", aspectRatio: "1/1", width: "100%" }}>
                 <img
                   src={p.img}
                   alt={p.name}
                   style={{
                     width: "100%",
-                    aspectRatio: "1/1",
+                    height: "100%",
                     objectFit: "cover",
                     display: "block",
                     transition: "transform .6s cubic-bezier(.16,1,.3,1)",
@@ -198,8 +198,8 @@ export default function Business() {
                   }}>{p.tag}</span>
                 )}
               </div>
-              {!p.hideCaption && <p style={{ fontSize: 13, fontWeight: 500, color: W.fg, marginBottom: 4, lineHeight: 1.4 }}>{p.name}</p>}
-              {!p.hideCaption && <p style={{ fontSize: 11, color: W.sub, letterSpacing: ".04em" }}>{p.cat}</p>}
+              {!p.hideCaption && <p style={{ fontSize: 12, fontWeight: 600, color: W.fg, marginBottom: 4, lineHeight: 1.5, letterSpacing: ".01em" }}>{p.name}</p>}
+              {!p.hideCaption && <p style={{ fontSize: 10, color: W.sub, letterSpacing: ".12em", textTransform: "uppercase" }}>{p.cat}</p>}
             </div>
           ))}
         </div>
