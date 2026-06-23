@@ -2,6 +2,57 @@ import { useEffect, useState } from "react";
 import { NavBar } from "./NavBar";
 import { useLocation } from "wouter";
 
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+function Lightbox({ src, name, cat, onClose }: { src: string; name: string; cat: string; onClose: () => void }) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 9999,
+        background: "rgba(0,0,0,0.88)",
+        display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center",
+        padding: 24,
+      }}
+    >
+      <img
+        src={src}
+        alt={name}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          maxWidth: "min(800px, 90vw)",
+          maxHeight: "80vh",
+          objectFit: "contain",
+          display: "block",
+          borderRadius: 2,
+        }}
+      />
+      <div onClick={(e) => e.stopPropagation()} style={{ marginTop: 20, textAlign: "center" }}>
+        <p style={{ color: "#fff", fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{name}</p>
+        <p style={{ color: "#aaa", fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase" }}>{cat}</p>
+      </div>
+      <button
+        onClick={onClose}
+        style={{
+          position: "absolute", top: 20, right: 24,
+          background: "none", border: "none", color: "#fff",
+          fontSize: 28, cursor: "pointer", lineHeight: 1,
+        }}
+      >×</button>
+    </div>
+  );
+}
+
 function useScrollReveal() {
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -83,9 +134,7 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s-drape.png" },
 
-  { code: "DG-DM01", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-01.png" },
   { code: "CP CM40 PE75", name: "CP이중지 CM40 PE75", cat: "다이마루", img: "/products/daemaru-02.png" },
-  { code: "DG-DM03", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-03.png" },
 ];
 
 const TABS = ["all", "립", "골지", "후라이스", "와플", "다이마루"] as const;
@@ -100,11 +149,13 @@ export default function Business() {
   }, []);
   const [activeTab, setActiveTab] = useState<Tab>("all");
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; name: string; cat: string } | null>(null);
   const filtered = (activeTab === "all" ? products : products.filter((p) => p.cat === activeTab))
     .filter((p) => p.cat !== "가공 인벤토리" && p.cat !== "편직 기계");
 
   return (
     <div style={{ background: W.bg, minHeight: "100vh", fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>
+      {lightbox && <Lightbox src={lightbox.src} name={lightbox.name} cat={lightbox.cat} onClose={() => setLightbox(null)} />}
       <NavBar active="business" />
 
       {/* Page Hero */}
@@ -179,7 +230,8 @@ export default function Business() {
             <div key={p.code}
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
-              style={{ cursor: "pointer" }}>
+              onClick={() => setLightbox({ src: p.img, name: p.name, cat: p.cat })}
+              style={{ cursor: "zoom-in" }}>
               <div style={{ overflow: "hidden", marginBottom: 12, background: "#f5f5f5", position: "relative", aspectRatio: "1/1", width: "100%" }}>
                 <img
                   src={p.img}
@@ -188,6 +240,7 @@ export default function Business() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
+                    objectPosition: "center center",
                     display: "block",
                     transition: "transform .6s cubic-bezier(.16,1,.3,1)",
                     transform: hoveredIdx === i ? "scale(1.05)" : "scale(1)",
