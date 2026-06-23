@@ -130,6 +130,7 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
 
   { code: "DG-G03", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-navy-real.png" },
+  { code: "DG-G05", name: "베리게이트 골지", cat: "골지", img: "/products/varigate-golgi-cream.png" },
   { code: "DG-G04", name: "포인텔 골지", cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
 
   { code: "와플 16S SP 70", name: "와플 16S SP 70", cat: "와플", img: "/products/waffle-20s-drape.png" },
