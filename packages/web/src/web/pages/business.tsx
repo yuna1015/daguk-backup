@@ -82,9 +82,13 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
   { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s-drape.png" },
+
+  { code: "DG-DM01", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-01.png" },
+  { code: "DG-DM02", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-02.png" },
+  { code: "DG-DM03", name: "다이마루 싱글 30수", cat: "다이마루", img: "/products/daemaru-03.png" },
 ];
 
-const TABS = ["all", "립", "골지", "후라이스", "와플"] as const;
+const TABS = ["all", "립", "골지", "후라이스", "와플", "다이마루"] as const;
 type Tab = typeof TABS[number];
 
 export default function Business() {
