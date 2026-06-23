@@ -136,10 +136,10 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
 
   { code: "CP CM40 PE75", name: "CP이중지 CM40 PE75", cat: "후라이스", img: "/products/daemaru-02.png" },
 
-  { code: "MACHINE-01", name: "쌍용 환편기 36\"", cat: "편직기계", img: "/products/rib-2x1-white.png", tag: "36인치" },
-  { code: "MACHINE-02", name: "금용 환편기 32\"", cat: "편직기계", img: "/products/rib-1x1-white.png", tag: "32인치" },
-  { code: "MACHINE-03", name: "경보 환편기 32\"", cat: "편직기계", img: "/products/rib-2x1-beige.png", tag: "32인치" },
-  { code: "MACHINE-04", name: "고게이지 환편기 24G", cat: "편직기계", img: "/products/rib-1x1-beige.png", tag: "24G" },
+  { code: "MACHINE-01", name: "쌍용 환편기", cat: "편직기계", img: "/products/machine-ssangyong-01.jpg" },
+  { code: "MACHINE-02", name: "금용 환편기 #12", cat: "편직기계", img: "/products/machine-keumyong-01.jpg" },
+  { code: "MACHINE-03", name: "경보 환편기", cat: "편직기계", img: "/products/machine-kyungbo-01.jpg" },
+  { code: "MACHINE-04", name: "금용 환편기 #27", cat: "편직기계", img: "/products/machine-keumyong-02.jpg" },
 ];
 
 const TABS = ["all", "후라이스", "골지", "와플", "편직기계"] as const;
