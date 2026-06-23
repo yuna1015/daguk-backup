@@ -135,7 +135,7 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "DG-F03",          name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1",    cat: "후라이스", img: "/products/tc-single-ivory.png" },
   { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1",    cat: "후라이스", img: "/products/tc-double-green.png" },
-  { code: "텐셀울 1×1",       name: "텐셀울 혼방 1×1",        cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
+  { code: "T/W 1×1",          name: "T/W 1×1 Fryce",          cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
 
   // ── 와플 ──────────────────────────────────────────────────────────
   { code: "와플 16S SP 70", name: "와플 16S SP 70", cat: "와플", img: "/products/waffle-20s-drape.png" },
