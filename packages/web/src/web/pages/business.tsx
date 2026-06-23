@@ -164,10 +164,10 @@ export default function Business() {
       <NavBar active="business" />
 
       {/* Page Hero */}
-      <div className="biz-hero" style={{ padding: "80px 36px 64px", borderBottom: `1px solid ${W.line}` }}>
-        <p style={{ fontSize: 10, letterSpacing: ".25em", color: W.sub, marginBottom: 24, textTransform: "uppercase" }}>Construction</p>
-        <h1 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 700, color: W.fg, lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 24 }}>
-          편직 구조
+      <div className="biz-hero" style={{ padding: "64px 36px 64px", borderBottom: `1px solid ${W.line}` }}>
+        <p style={{ fontSize: 10, letterSpacing: ".25em", color: W.sub, marginBottom: 16, textTransform: "uppercase", fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>PRODUCTS</p>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: W.fg, lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16, fontFamily: "Pretendard Variable, Pretendard, sans-serif" }}>
+          Construction | 편직 구조
         </h1>
         <p style={{ fontSize: 15, color: W.dim, maxWidth: 480, lineHeight: 2, letterSpacing: ".01em" }}>
           다이마루 · 립 · 골지 전 라인업.<br />샘플부터 대량 납품까지.
