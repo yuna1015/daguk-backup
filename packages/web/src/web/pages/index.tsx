@@ -160,7 +160,7 @@ function Products() {
     { i: "01", en: "Rib", kr: "립 편직" },
     { i: "02", en: "Golgi", kr: "골지 편직" },
     { i: "03", en: "Fryce", kr: "후라이스" },
-    { i: "04", en: "Waffle Knit", kr: "와플편직" },
+    { i: "04", en: "Waffle Knit", kr: "와플 편직" },
     { i: "05", en: "Machine Spec", kr: "편직 기계 사양" },
   ];
 

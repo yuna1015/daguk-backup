@@ -634,9 +634,10 @@
   .dg-block, .dg-section { padding: 52px 20px; }
   .dg-page-hero { padding: 120px 20px 60px; }
   .dg-metrics { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .prow { gap: 16px; padding: 24px 4px; }
-  .prow .pname { font-size: clamp(32px,11vw,48px); }
-  .prow .pi { width: 16px; font-size: 11px; }
+  .prow { gap: 8px 16px; padding: 20px 4px; flex-wrap: wrap; align-items: center; }
+  .prow .pi { width: 16px; font-size: 11px; flex: none; }
+  .prow .pname { font-size: clamp(26px, 9vw, 42px); white-space: nowrap; line-height: 1.1; }
+  .prow .pkr { font-size: 12px; margin-left: auto; white-space: nowrap; }
   .dg-partners { grid-template-columns: repeat(3,1fr); gap: 40px 14px; }
   .pcell { font-size: 13px; }
   .pcell.sm { font-size: 11px; }
