@@ -144,7 +144,7 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
     specs: { gauge: "18G · 22G", inch: "36\" · 32\"", needles: "2064 / 2356 / 2454 / 2064 / 1800 / 1680", qty: "36\" 1대  ·  32\" 4대" } },
   { code: "MACHINE-02", name: "Orizio 환편기", cat: "편직기계", img: "/products/machine-keumyong-01.jpg",
     specs: { gauge: "18G · 24G · 13.5G", inch: "36\" · 32\"", needles: "2064 / 1560 / 2412 / 1320 / 1680 / 1800", qty: "36\" 2대  ·  32\" 4대" } },
-  { code: "MACHINE-03", name: "금용 환편기", cat: "편직기계", img: "/products/machine-keumyong-02.jpg",
+  { code: "MACHINE-03", name: "금용 환편기", cat: "편직기계", img: "/products/machine-keumyong-02.png",
     specs: { gauge: "13.5G · 18G · 20G", inch: "36\"", needles: "2064 / 2280 / 2208 / 1584", qty: "36\" 6대" } },
   { code: "MACHINE-04", name: "경보 환편기", cat: "편직기계", img: "/machines/machine-kyungbo-01.png",
     specs: { gauge: "18G · 22G", inch: "36\" · 32\"", needles: "2064 / 1800", qty: "36\" 2대  ·  32\" 3대" } },
