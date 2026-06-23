@@ -76,13 +76,14 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "후라이스", img: "/products/tc-single-ivory.png" },
   { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "후라이스", img: "/products/tc-double-green.png" },
 
-  { code: "DG-G02", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-8x2.jpg" },
-  { code: "DG-G03", name: "스트라이프 2×2 골지", cat: "골지", img: "/products/stripe-golgi-2x2.jpg" },
+  { code: "DG-G02", name: "스트라이프 골지 — 세이지", cat: "골지", img: "/products/stripe-golgi-sage.png" },
+  { code: "DG-G03", name: "스트라이프 골지 — 버건디", cat: "골지", img: "/products/stripe-golgi-burgundy.png" },
+  { code: "DG-G05", name: "스트라이프 골지 — 차콜", cat: "골지", img: "/products/stripe-golgi-charcoal.png" },
   { code: "DG-G04", name: "포인텔 골지", cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
 
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
   { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
-  { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s.jpg" },
+  { code: "DG-W01", name: "와플 20수", cat: "와플", img: "/products/waffle-20s-drape.png" },
 ];
 
 const TABS = ["all", "립", "골지", "후라이스", "와플"] as const;
