@@ -105,37 +105,38 @@ function Footer() {
 }
 
 const products: { code: string; name: string; cat: string; img: string; tag?: string; hideCaption?: boolean; specs?: { gauge?: string; inch?: string; needles?: string; qty?: string } }[] = [
-  { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "골지", img: "/products/rib-2x1-white.png" },
-  { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "골지", img: "/products/rib-2x1-beige.png" },
-  { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "골지", img: "/products/rib-2x1-gray.png" },
-  { code: "CM30SP70 2×1", name: "CM30SP70 2×1", cat: "골지", img: "/products/golgi-2x1-orange.png" },
+  // ── 골지 ─────────────────────────────────────────────────────────
+  { code: "CM20SP140 2×1",      name: "CM20SP140 2×1",      cat: "골지", img: "/products/rib-2x1-white.png" },
+  { code: "CM20SP70 2×1",       name: "CM20SP70 2×1",       cat: "골지", img: "/products/rib-2x1-beige.png" },
+  { code: "CM30SP140 2×1",      name: "CM30SP140 2×1",      cat: "골지", img: "/products/rib-2x1-gray.png" },
+  { code: "CM30SP70 2×1",       name: "CM30SP70 2×1",       cat: "골지", img: "/products/golgi-2x1-orange.png" },
   { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "골지", img: "/products/rib-2x1-navy.png" },
-  { code: "CM30이합 SP70 2×1", name: "CM30이합 SP70 2×1", cat: "골지", img: "/products/rib-2x1-gray.png" },
-  { code: "CVC30SP140 2×1", name: "CVC30SP140 2×1", cat: "골지", img: "/products/rib-2x1-beige.png" },
+  { code: "CM30이합 SP70 2×1",  name: "CM30이합 SP70 2×1",  cat: "골지", img: "/products/rib-2x1-gray.png" },
+  { code: "CVC30SP140 2×1",     name: "CVC30SP140 2×1",     cat: "골지", img: "/products/rib-2x1-beige.png" },
   { code: "TC 65/35 SP140 2×1", name: "TC 65/35 SP140 2×1", cat: "골지", img: "/products/tc-sp140-navy.png" },
-  { code: "TC 65/35 SP70 2×1", name: "TC 65/35 SP70 2×1", cat: "골지", img: "/products/tc-sp70-burgundy.png" },
-
-  { code: "CM30단사 1×1", name: "CM30단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-white.png" },
-  { code: "CM20단사 1×1", name: "CM20단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-beige.png" },
-  { code: "CM40단사 1×1", name: "CM40단사 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-gray.png" },
-  { code: "CM30이합 1×1", name: "CM30이합 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-charcoal.png" },
-  { code: "CM20이합 1×1", name: "CM20이합 1×1 노스판", cat: "후라이스", img: "/products/rib-1x1-gray.png" },
-  { code: "CVC20단사 1×1", name: "CVC20단사 1×1 노스판", cat: "후라이스", img: "/products/cvc20-1x1-ivory.png" },
-  { code: "CVC30단사 1×1", name: "CVC30단사 1×1", cat: "후라이스", img: "/products/cvc30-1x1-blush.png" },
-  { code: "CVC40 1×1", name: "CVC40 1×1 노스판", cat: "후라이스", img: "/products/cvc40-1x1-stone.png" },
-  { code: "CVC30이합 노스판", name: "CVC30이합 노스판", cat: "후라이스", img: "/products/cvc30ihap-1x1-sage.png" },
-  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "후라이스", img: "/products/tc-single-ivory.png" },
-  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "후라이스", img: "/products/tc-double-green.png" },
-  { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
-  { code: "텐셀울 1×1", name: "텐셀울 혼방 1×1", cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
-
+  { code: "TC 65/35 SP70 2×1",  name: "TC 65/35 SP70 2×1",  cat: "골지", img: "/products/tc-sp70-burgundy.png" },
+  { code: "DG-G05", name: "베리게이트 골지",     cat: "골지", img: "/products/varigate-golgi-cream.png" },
+  { code: "DG-G04", name: "포인텔 골지",         cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
   { code: "DG-G03", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-navy-real.png" },
-  { code: "DG-G05", name: "베리게이트 골지", cat: "골지", img: "/products/varigate-golgi-cream.png" },
-  { code: "DG-G04", name: "포인텔 골지", cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
 
+  // ── 후라이스 ──────────────────────────────────────────────────────
+  { code: "CM20단사 1×1",    name: "CM20단사 1×1 노스판",     cat: "후라이스", img: "/products/rib-1x1-beige.png" },
+  { code: "CM20이합 1×1",    name: "CM20이합 1×1 노스판",     cat: "후라이스", img: "/products/rib-1x1-gray.png" },
+  { code: "CM30단사 1×1",    name: "CM30단사 1×1 노스판",     cat: "후라이스", img: "/products/rib-1x1-white.png" },
+  { code: "CM30이합 1×1",    name: "CM30이합 1×1 노스판",     cat: "후라이스", img: "/products/rib-1x1-charcoal.png" },
+  { code: "CM40단사 1×1",    name: "CM40단사 1×1 노스판",     cat: "후라이스", img: "/products/rib-1x1-gray.png" },
+  { code: "CP CM40 PE75",    name: "CP이중지 CM40 PE75",      cat: "후라이스", img: "/products/daemaru-02.png" },
+  { code: "CVC20단사 1×1",   name: "CVC20단사 1×1 노스판",    cat: "후라이스", img: "/products/cvc20-1x1-ivory.png" },
+  { code: "CVC30단사 1×1",   name: "CVC30단사 1×1",           cat: "후라이스", img: "/products/cvc30-1x1-blush.png" },
+  { code: "CVC30이합 노스판", name: "CVC30이합 노스판",        cat: "후라이스", img: "/products/cvc30ihap-1x1-sage.png" },
+  { code: "CVC40 1×1",       name: "CVC40 1×1 노스판",        cat: "후라이스", img: "/products/cvc40-1x1-stone.png" },
+  { code: "DG-F03",          name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
+  { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1",    cat: "후라이스", img: "/products/tc-single-ivory.png" },
+  { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1",    cat: "후라이스", img: "/products/tc-double-green.png" },
+  { code: "텐셀울 1×1",       name: "텐셀울 혼방 1×1",        cat: "후라이스", img: "/products/fryce-tencel-wool.png" },
+
+  // ── 와플 ──────────────────────────────────────────────────────────
   { code: "와플 16S SP 70", name: "와플 16S SP 70", cat: "와플", img: "/products/waffle-20s-drape.png" },
-
-  { code: "CP CM40 PE75", name: "CP이중지 CM40 PE75", cat: "후라이스", img: "/products/daemaru-02.png" },
 
   { code: "MACHINE-01", name: "쌍용 환편기", cat: "편직기계", img: "/products/machine-ssangyong-01.jpg",
     specs: { gauge: "18G · 22G", inch: "36\" · 32\"", needles: "2064 / 2356 / 2454 / 2064 / 1800 / 1680", qty: "36\" 1대  ·  32\" 4대" } },
