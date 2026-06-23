@@ -53,7 +53,7 @@ function Footer() {
   );
 }
 
-const products: { code: string; name: string; cat: string; img: string; tag?: string }[] = [
+const products: { code: string; name: string; cat: string; img: string; tag?: string; hideCaption?: boolean }[] = [
   { code: "CM20SP140 2×1", name: "CM20SP140 2×1", cat: "립", img: "/products/rib-2x1-white.png" },
   { code: "CM20SP70 2×1", name: "CM20SP70 2×1", cat: "립", img: "/products/rib-2x1-beige.png" },
   { code: "CM30SP140 2×1", name: "CM30SP140 2×1", cat: "립", img: "/products/rib-2x1-gray.png" },
@@ -76,10 +76,9 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "TC 65/35 단사 1×1", name: "TC 65/35 단사 1×1", cat: "후라이스", img: "/products/tc-single-ivory.png" },
   { code: "TC 65/35 이합 1×1", name: "TC 65/35 이합 1×1", cat: "후라이스", img: "/products/tc-double-green.png" },
 
-  { code: "DG-G01", name: "스트라이프 골지", cat: "골지", img: "/products/stripe-golgi-00.png" },
-  { code: "DG-G02", name: "스트라이프 골지", cat: "골지", img: "/products/stripe-golgi-01.png" },
-  { code: "DG-G03", name: "스트라이프 골지", cat: "골지", img: "/products/stripe-golgi-02.png" },
-  { code: "DG-G04", name: "스트라이프 골지", cat: "골지", img: "/products/stripe-golgi-03.png" },
+  { code: "DG-G01", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-00.png", hideCaption: true },
+  { code: "DG-G03", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-02.png", hideCaption: true },
+  { code: "DG-G04", name: "스트라이프 8×2 골지", cat: "골지", img: "/products/stripe-golgi-03.png", hideCaption: true },
   { code: "DG-G04", name: "포인텔 골지", cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
 
   { code: "DG-F03", name: "스트라이프 1×1 후라이스", cat: "후라이스", img: "/products/stripe-fryce-1x1.jpg" },
@@ -201,8 +200,8 @@ export default function Business() {
                   }}>{p.tag}</span>
                 )}
               </div>
-              <p style={{ fontSize: 13, fontWeight: 500, color: W.fg, marginBottom: 4, lineHeight: 1.4 }}>{p.name}</p>
-              <p style={{ fontSize: 11, color: W.sub, letterSpacing: ".04em" }}>{p.cat}</p>
+              {!p.hideCaption && <p style={{ fontSize: 13, fontWeight: 500, color: W.fg, marginBottom: 4, lineHeight: 1.4 }}>{p.name}</p>}
+              {!p.hideCaption && <p style={{ fontSize: 11, color: W.sub, letterSpacing: ".04em" }}>{p.cat}</p>}
             </div>
           ))}
         </div>
