@@ -199,7 +199,7 @@ export default function Business() {
           </div>
         </div>
         <div className="biz-unit-img" style={{ overflow: "hidden", padding: "32px 32px 32px 0" }}>
-          <img src="/hwoasung/knitting_unit.jpg" alt="편직 생지" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
+          <img src="/hwoasung/knitting_unit_keumyong.png" alt="편직 생지" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 360 }} />
         </div>
       </div>
 
