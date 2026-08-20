@@ -108,10 +108,10 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   // ── 골지 ─────────────────────────────────────────────────────────
   { code: "CM20SP140 2×1",      name: "CM20SP140 2×1",      cat: "골지", img: "/products/rib-2x1-white.png" },
   { code: "CM20SP70 2×1",       name: "CM20SP70 2×1",       cat: "골지", img: "/products/rib-2x1-beige.png" },
-  { code: "CM30SP140 2×1",      name: "CM30SP140 2×1",      cat: "골지", img: "/products/rib-2x1-gray-flip.png" },
-  { code: "CM30SP70 2×1",       name: "CM30SP70 2×1",       cat: "골지", img: "/products/golgi-2x1-orange-flip.png" },
+  { code: "CM30SP140 2×1",      name: "CM30SP140 2×1",      cat: "골지", img: "/products/rib-2x1-gray.png" },
+  { code: "CM30SP70 2×1",       name: "CM30SP70 2×1",       cat: "골지", img: "/products/golgi-2x1-orange-v.png" },
   { code: "CM30이합 SP140 2×1", name: "CM30이합 SP140 2×1", cat: "골지", img: "/products/rib-2x1-navy.png" },
-  { code: "CM30이합 SP70 2×1",  name: "CM30이합 SP70 2×1",  cat: "골지", img: "/products/rib-2x1-gray-flip.png" },
+  { code: "CM30이합 SP70 2×1",  name: "CM30이합 SP70 2×1",  cat: "골지", img: "/products/rib-2x1-gray.png" },
   { code: "CVC30SP140 2×1",     name: "CVC30SP140 2×1",     cat: "골지", img: "/products/rib-2x1-beige.png" },
   { code: "TC 65/35 SP140 2×1", name: "TC 65/35 SP140 2×1", cat: "골지", img: "/products/tc-sp140-navy.png" },
   { code: "TC 65/35 SP70 2×1",  name: "TC 65/35 SP70 2×1",  cat: "골지", img: "/products/tc-sp70-burgundy.png" },
