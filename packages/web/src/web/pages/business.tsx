@@ -115,7 +115,6 @@ const products: { code: string; name: string; cat: string; img: string; tag?: st
   { code: "CVC30SP140 2×1",     name: "CVC30SP140 2×1",     cat: "골지", img: "/products/rib-2x1-beige.png" },
   { code: "TC 65/35 SP140 2×1", name: "TC 65/35 SP140 2×1", cat: "골지", img: "/products/tc-sp140-navy.png" },
   { code: "TC 65/35 SP70 2×1",  name: "TC 65/35 SP70 2×1",  cat: "골지", img: "/products/tc-sp70-burgundy.png" },
-  { code: "DG-G05", name: "베리게이트 골지",     cat: "골지", img: "/products/varigate-golgi-cream.png" },
   { code: "C/Mo30 Varigate", name: "C/Mo 30 Varigate Golji", cat: "골지", img: "/products/cmo30-varigate-sage.png" },
   { code: "C/Mo Slub Varigate", name: "C/Mo Slub Varigate Golji", cat: "골지", img: "/products/cmo-slub-varigate-cream.png", tag: "NEW" },
   { code: "DG-G04", name: "포인텔 골지",         cat: "골지", img: "/products/pointelle-cream-v3.png", tag: "NEW" },
