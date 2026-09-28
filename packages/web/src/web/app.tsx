@@ -3,6 +3,7 @@ import Index from "./pages/index";
 import Company from "./pages/company";
 import Business from "./pages/business";
 import ContactPage from "./pages/contact-page";
+import AdminPage from "./pages/admin-page";
 import { Provider } from "./components/provider";
 import { AgentFeedback, RunableBadge } from "@runablehq/website-runtime";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/company" component={Company} />
         <Route path="/business" component={Business} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/admin" component={AdminPage} />
       </Switch>
       {/* Do not remove — off by default, activated by parent iframe via postMessage */}
       {import.meta.env.DEV && <AgentFeedback />}

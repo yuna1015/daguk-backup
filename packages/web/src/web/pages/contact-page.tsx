@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "./NavBar";
 import { useLocation } from "wouter";
+import { api } from "../lib/api";
 
 function useScrollReveal() {
   useEffect(() => {
@@ -57,10 +58,22 @@ export default function ContactPage() {
   }, []);
   const [form, setForm] = useState({ company: "", name: "", tel: "", email: "", type: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setErrorMsg("");
+    try {
+      const res = await api.inquiries.$post({ json: form });
+      if (!res.ok) throw new Error("문의 전송에 실패했습니다.");
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMsg("문의 전송에 실패했습니다. 다시 시도하거나 전화로 문의해주세요.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const info = [
@@ -160,7 +173,10 @@ export default function ContactPage() {
                   <textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="원단 종류, 예상 수량, 납기 등 자유롭게 작성해주세요." />
                 </div>
-                <button type="submit" className="dg-btn">문의 보내기 →</button>
+                {errorMsg && <p style={{ color: "#e05a4a", fontSize: 13, marginTop: -8 }}>{errorMsg}</p>}
+                <button type="submit" className="dg-btn" disabled={submitting}>
+                  {submitting ? "전송 중..." : "문의 보내기 →"}
+                </button>
               </form>
             )}
           </div>
