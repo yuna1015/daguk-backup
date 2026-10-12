@@ -1,3 +1,3 @@
-import app from "../src/api/index";
+import app from "../src/api/index.ts";
 
 export default app;

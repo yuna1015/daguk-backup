@@ -6,7 +6,7 @@ import { drizzle } from "drizzle-orm/libsql";
 // We only ever talk to a remote Turso DB over https/wss, so the lighter
 // web client (fetch/WebSocket only, no native deps) is both correct and safe.
 import { createClient } from "@libsql/client/web";
-import * as schema from "./schema";
+import * as schema from "./schema.ts";
 
 type Db = ReturnType<typeof drizzle<typeof schema>>;
 

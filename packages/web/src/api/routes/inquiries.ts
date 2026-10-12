@@ -2,9 +2,9 @@ import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
 import { desc } from "drizzle-orm";
-import { db } from "../database";
-import * as schema from "../database/schema";
-import { sendEmail } from "../services/email";
+import { db } from "../database/index.ts";
+import * as schema from "../database/schema.ts";
+import { sendEmail } from "../services/email.ts";
 
 const NOTIFY_EMAIL = "dagook1869@daum.net";
 
