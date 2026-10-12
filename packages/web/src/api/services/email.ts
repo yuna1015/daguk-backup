@@ -13,22 +13,20 @@ function getResend() {
   return _resend;
 }
 
-interface SendEmailOptions {
+type SendEmailOptions = {
   to: string | string[];
   subject: string;
-  text?: string;
-  html?: string;
   replyTo?: string;
-}
+} & ({ html: string; text?: string } | { text: string; html?: string });
 
-export async function sendEmail({ to, subject, text, html, replyTo }: SendEmailOptions) {
+export async function sendEmail(options: SendEmailOptions) {
+  const { to, subject, replyTo } = options;
   const { data, error } = await getResend().emails.send({
     from: "Daguk Textile <onboarding@resend.dev>",
     to: Array.isArray(to) ? to : [to],
     subject,
-    text,
-    html,
     replyTo,
+    ...("html" in options && options.html ? { html: options.html } : { text: (options as { text: string }).text }),
   });
 
   if (error) throw new Error(`Email failed: ${error.message}`);

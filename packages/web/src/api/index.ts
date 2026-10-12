@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from "hono/cors"
-import { inquiries } from "./routes/inquiries.ts";
+import { inquiries } from "./routes/inquiries";
 
 const app = new Hono()
   .basePath('api')
