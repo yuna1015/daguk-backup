@@ -1,5 +1,11 @@
 import { drizzle } from "drizzle-orm/libsql";
-import { createClient } from "@libsql/client";
+// Use the "/web" build: the default "@libsql/client" entrypoint unconditionally
+// imports the native sqlite3 binding (for local file:// DBs), which Vercel's
+// serverless bundler fails to include and crashes the whole function on
+// import alone (FUNCTION_INVOCATION_FAILED on every route, even /api/health).
+// We only ever talk to a remote Turso DB over https/wss, so the lighter
+// web client (fetch/WebSocket only, no native deps) is both correct and safe.
+import { createClient } from "@libsql/client/web";
 import * as schema from "./schema";
 
 type Db = ReturnType<typeof drizzle<typeof schema>>;
